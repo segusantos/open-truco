@@ -3,5 +3,11 @@ name = "truco"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.13"
+dependencies = [
+    "torch>=2.0",
+    "numpy",
+]
+
+[tool.uv.sources]
+open-spiel = { path = "open_spiel", editable = true }

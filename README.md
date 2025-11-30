@@ -7,7 +7,7 @@ This repository contains tools for training and evaluating reinforcement learnin
 To set up the development environment, run the following commands ([uv](https://uv.dev/) is used as project manager):
 
 ```bash
-uv venv
+uv sync
 source .venv/bin/activate
 git clone https://github.com/segusantos/open_spiel.git
 cd open_spiel

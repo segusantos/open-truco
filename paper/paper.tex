@@ -1,0 +1,267 @@
+\documentclass[10pt, a4paper, twocolumn]{article}
+\usepackage[a4paper, margin=2cm, columnsep=1cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\usepackage[absolute, overlay]{textpos}
+
+\usepackage[sc]{mathpazo}
+\usepackage{helvet}
+\usepackage{sectsty}  
+\allsectionsfont{\sffamily}
+
+\usepackage[
+    backend=biber,
+    style=apa,
+    sorting=nyt,
+    language=spanish
+]{biblatex}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\addbibresource{paper.bib}
+
+\title{
+    \large I404 Aprendizaje Reforzado\\[0.3em]
+    \sffamily\huge\textbf{OpenTruco: PPO, Deep CFR, NFSP\\para Truco Argentino}\\[0.3em]
+    \rmfamily\large\textit{Proyecto Final}
+}
+\author{
+    Marcos Piotto \\
+    \href{mailto:mpiotto@udesa.edu.ar}{mpiotto@udesa.edu.ar}
+    \and
+    Segundo Santos Torrado \\
+    \href{mailto:ssantostorrado@udesa.edu.ar}{ssantostorrado@udesa.edu.ar}
+    \and
+    Lucas Vitali \\
+    \href{mailto:lvitali@udesa.edu.ar}{lvitali@udesa.edu.ar}
+}
+\date{Primavera de 2025}
+
+\begin{document}
+
+\begin{textblock*}{4cm}(\dimexpr\paperwidth-2.25cm-4cm\relax, 1.5cm)
+    \includegraphics[width=4cm]{figures/udesa.png}
+\end{textblock*}
+
+\maketitle
+\begin{abstract}
+    \begin{quote}
+        La adopción de innovaciones tecnológicas es un fenómeno complejo influenciado
+        por múltiples factores sociales y estructurales. Este trabajo presenta un
+        diseño de investigación para analizar cómo el tamaño poblacional afecta la
+        velocidad, el patrón y el alcance de la adopción de innovaciones tecnológicas.
+        Se propone un estudio de campo comparativo entre localidades de distinto tamaño,
+        fundamentado en la Teoría de la Difusión de Innovaciones.
+    \end{quote}
+\end{abstract}
+
+\section{Introducción}
+
+El presente trabajo tiene como objetivo diseñar un proyecto de investigación
+para analizar la influencia del tamaño poblacional en la adopción de tecnologías.
+Se busca comprender cómo las dinámicas sociales en diferentes contextos urbanos
+afectan la difusión de innovaciones.
+
+En primer lugar, se plantean los objetivos generales y particulares del estudio,
+seguido de la hipótesis principal y sus posibles contrastaciones. A continuación,
+se detalla la metodología propuesta, incluyendo el tipo de experimento,
+variables, métodos de medición y consideraciones sobre su validez. Subsecuentemente,
+se presenta el estado del arte que fundamenta el proyecto, junto con las
+consideraciones éticas relacionadas a la investigación propuesta. Por último,
+se describe la utilización de herramientas de inteligencia artificial durante la
+elaboración del trabajo y se explicitan las referencias bibliográficas utilizadas.
+
+\section{Objetivos}
+
+En cuanto a los objetivos del proyecto, se distinguen dos niveles: los generales,
+que abordan la meta amplia del estudio, y los particulares, que especifican
+aspectos concretos a lograr.
+
+\subsection*{Objetivos generales}
+
+Entre los objetivos generales del proyecto se identifican los siguientes:
+
+\begin{itemize}
+    \item Analizar el impacto del tamaño poblacional en la adopción tecnológica,
+          esto es, la relación entre la demografía de una urbe y la difusión de
+          innovaciones en ella.
+    \item Proponer recomendaciones basadas en evidencia a compañías privadas y
+          organizaciones gubernamentales para orientar estrategias de
+          introducción tecnológica.
+\end{itemize}
+
+\subsection*{Objetivos particulares}
+
+Respecto a los objetivos particulares, se plantean los siguientes:
+
+\begin{itemize}
+    \item Medir la velocidad inicial y cobertura final de difusión de innovaciones en
+          poblaciones de distintos tamaños. Con este fin, se busca cuantificar la adopción
+          de tecnologías en localidades pequeñas, medianas y grandes a corto y largo plazo.
+    \item Evaluar la efectividad de la introducción de incentivos para la adopción de
+          tecnologías innovadoras, es decir, analizar si la intervención con incentivos
+          es efectiva y si tiene un impacto diferencial según el tamaño poblacional.
+\end{itemize}
+
+\section{Hipótesis}
+
+El tamaño poblacional influye en la difusión de innovaciones tecnológicas: en ciudades grandes
+la adopción inicial es gradual y el alcance a usuarios final es alto, mientras que en ciudades
+pequeñas la velocidad de difusión al principio es alta, pero la cobertura total es más limitada
+(véase Figura \ref{fig:adoption_curves}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/adoption_curves.pdf}
+    \caption{Curvas de adopción esperadas según el tamaño poblacional. Se observa una adopción
+        inicial más rápida en pueblos debido a sus redes sociales densas, pero con un techo más
+        bajo. Las metrópolis muestran un crecimiento más lento pero sostenido, con una mayor
+        cobertura final.}
+    \label{fig:adoption_curves}
+\end{figure}
+
+A continuación, se presentan dos posibles formas de contrastar la hipótesis propuesta.
+
+\subsection*{Primera contrastación posible}
+
+Se seleccionan varias localidades de distinto tamaño, clasificadas en tres categorías:
+``pueblo'' (menos de 50.000 habitantes), ``ciudad'' (entre 50.000 y 1.000.000 de habitantes)
+y ``metrópoli'' (más de 1.000.000 de habitantes). Dentro de cada segmento, se recluta un
+conjunto de personas con características comparables y se las asigna a tratamiento o control.
+
+La intervención consiste en ofrecer un paquete idéntico durante tres meses:
+\begin{itemize}
+    \item Acceso guiado y gratuito a una tecnología digital de acceso universal (una billetera virtual o un asistente de IA, por ejemplo).
+    \item Material informativo y soporte técnico para el uso de la aplicación.
+    \item Incentivos menores (descuentos, créditos de uso) para realizar las primeras interacciones.
+\end{itemize}
+
+El grupo de control no recibe el paquete durante el mismo período. Medimos tasa de adopción (registro, uso efectivo), intensidad de uso y
+retención a 1, 3, 6 y 12 meses.
+
+Luego, la predicción observacional de esta contrastación es que, tras la intervención, la diferencia de adopción tratamiento vs. control
+será mayor en las ciudades grandes que en las pequeñas.
+
+\subsection*{Segunda contrastación posible}
+
+Se lleva a acabo un análisis estadístico de las tasas de adopción de una tecnología digital (una \textit{wallet} o ChatGPT)
+en localidades de distintos tamaños: ``pueblo'', ``ciudad'' y ``metrópoli''.
+
+En este caso, la predicción observacional es que los pueblos mostrarán adopción rápida dentro de ciertos grupos al inicio, mientras que
+las metrópolis presentarán adopción más escalonada, pero con mayor penetración final.
+
+\subsection*{Supuestos auxiliares}
+
+A su vez, para la elaboración de la hipótesis, se consideraron los supuestos auxiliares que se
+describen a continuación.
+
+En primer lugar, se asume que hay \textbf{estabilidad en la oferta tecnológica}, esto es, que la
+disponibilidad y calidad del servicio tecnológico se mantiene constante en todas las localidades
+durante el estudio. Este supuesto es razonable dado que las aplicaciones digitales suelen tener
+despliegue nacional uniforme, y es necesario para atribuir las diferencias de adopción al
+tamaño poblacional y no a fallas de servicio.
+
+En segundo lugar, se asume la \textbf{ausencia de distorsiones externas}, es decir, que no habrá
+campañas masivas concurrentes ni políticas locales extraordinarias que incentiven o bloqueen
+la tecnología en las localidades seleccionadas. Esto se justifica por la necesidad de aislamiento
+causal y se controlará mediante el monitoreo de noticias locales.
+
+\section{Metodología}
+
+En esta sección, se detalla el diseño metodológico propuesto para contrastar la hipótesis planteada
+utilizando la primera forma de contrastación descripta anteriormente.
+
+En cuanto al tipo de experimento, se opta por un estudio de campo que permita captar la influencia del
+tamaño poblacional y la densidad social en la difusión de innovaciones.
+
+Respecto a la intervención o procedimiento, se comparará la adopción tecnológica en localidades de distinto
+tamaño: ``pueblo'' ($<50$k), ``ciudad'' ($50$k$-1$M) y ``metrópoli'' ($>1$M). Dentro de cada tipo de localidad
+se reclutarán grupos equivalentes de personas con características comparables (edad, nivel educativo, acceso
+a internet, ingresos, etc.). A la mitad de los participantes se les asignará el tratamiento, que incluye acceso
+gratuito y guiado a una tecnología digital, material informativo y soporte técnico, así como pequeños incentivos
+(descuentos o créditos) para fomentar el uso inicial.
+
+El grupo de control no recibirá el paquete durante el mismo período. La intervención durará tres meses, tras lo
+cual se medirán los niveles de adopción (registro, uso efectivo y retención) en 1, 3, 6 y 12 meses posteriores.
+
+\subsection*{Variables}
+
+Respecto a las variables consideradas en el experimento, se definen las siguientes:
+\begin{itemize}
+    \item \textbf{Variable independiente principal:} Tamaño poblacional de la localidad (pueblo, ciudad, metrópoli).
+    \item \textbf{Variable dependiente principal:} Tasa de adopción tecnológica (porcentaje de participantes que registran, usan y mantienen el uso de la tecnología).
+    \item \textbf{Variables dependientes adicionales:} Intensidad y frecuencia de uso, retención a largo plazo.
+\end{itemize}
+
+\subsection*{Método de detección o medición}
+
+Los datos se recolectarán mediante tres fuentes complementarias:
+\begin{itemize}
+    \item Registros de uso digital (logs de cada aplicación tecnológica y estadísticas de uso del dispositivo segmentado por \textit{app}), que permiten medir adopción, frecuencia y continuidad.
+    \item Encuestas estructuradas antes y después de la intervención, para captar percepciones, barreras y motivaciones.
+    \item Observaciones complementarias o entrevistas breves en muestras reducidas, para contextualizar los resultados cuantitativos.
+\end{itemize}
+Las mediciones se harán con intervalos definidos (\textit{pretest}, \textit{postest} y seguimiento) para evaluar tanto el efecto inmediato como la persistencia en el tiempo.
+
+\subsection*{Variables extrañas}
+
+Se identifican las siguientes variables extrañas que podrían interferir con la relación causal entre el tamaño poblacional y la adopción tecnológica:
+
+\begin{itemize}
+    \item \textbf{Acceso diferencial a internet o dispositivos:} puede interferir porque las localidades pequeñas pueden tener menor conectividad, afectando la adopción independientemente de la intervención. Para su control se seleccionarán participantes con acceso asegurado o se proveerán dispositivos/bonos de conectividad equivalentes.
+    \item \textbf{Interés o experiencia previa en tecnología:} puede interferir porque los participantes con mayor familiaridad pueden adoptar más rápido sin importar el tamaño poblacional. Para su control se medirá el nivel inicial de experiencia y se equilibrará entre grupos mediante emparejamiento o aleatorización.
+    \item \textbf{Efectos de difusión cruzada:} puede interferir porque los del grupo de control podrían enterarse de la intervención y modificar su comportamiento. Para su control se seleccionará geográficamente a los participantes para reducir la interacción entre distintos grupos dentro de la misma localidad.
+\end{itemize}
+
+\subsection*{Validez del diseño}
+
+A continuación, se analiza la validez interna y externa del diseño propuesto.
+
+\textbf{Validez interna:} El uso de grupos de control y la asignación aleatoria dentro de cada localidad permiten atribuir los cambios observados a la intervención y al tamaño poblacional. Los supuestos auxiliares (comparabilidad inicial, homogeneidad del tratamiento y estabilidad del contexto) refuerzan la inferencia causal. Sin embargo, la validez interna puede verse limitada por la posible interacción entre grupos o por diferencias contextuales no controladas.
+
+\textbf{Validez externa:} Al realizar el estudio en distintas localidades reales, los resultados pueden generalizarse razonablemente a otros contextos urbanos y rurales. No obstante, la extrapolación a países o culturas con distinta infraestructura tecnológica debe hacerse con precaución.
+
+\subsection*{Cánones de inferencia causal}
+Se aplicará el canon de la variación concomitante, observando cómo varía la tasa de adopción en función del tamaño poblacional. Este método es el apropiado ya que cuando dos variables varían juntas, hay relación causal posible. Es decir, a medida que aumenta la variable independiente (tamaño poblacional), también aumenta la variable dependiente (la difusión de innovaciones tecnológicas).
+
+\section{Estado del arte}
+
+El estudio de la adopción tecnológica cuenta con una amplios antecedentes en la literatura académica. \textcite{Rogers1962} estableció las bases con su Teoría de la Difusión de Innovaciones, describiendo la adopción como un proceso social comunicado a través de canales específicos en el tiempo. Desde una perspectiva sociológica, Rogers sugiere que en ciudades pequeñas las redes son densas y presentan alta homofilia, lo que facilita una difusión rápida pero localizada. En contraste, en ciudades grandes las redes son más dispersas y heterofílicas, lo que podría ralentizar la adopción inicial pero permitir un alcance más amplio a largo plazo.
+
+Complementariamente, \textcite{Hagerstrand1967} introdujo la dimensión espacial, sugiriendo que la difusión ocurre como un proceso de contagio por cercanía. Según su enfoque, las ciudades pequeñas pueden experimentar aislamiento espacial donde predomina el ``efecto vecindad'', mientras que las grandes urbes actúan como nodos centrales en una difusión jerárquica.
+
+Adicionalmente, modelos más recientes como el de \textcite{young2006innovation} proponen que las personas adoptan tecnologías cuando una proporción suficiente de su entorno ya lo ha hecho, reforzando la importancia de la densidad de las interacciones locales.
+
+A pesar de estos avances, existe un debate sobre cómo la densidad urbana moderna altera estos patrones clásicos. Este proyecto se diferencia al contrastar empíricamente estas teorías en el contexto actual de tecnologías digitales, donde la distancia física podría tener un rol distinto al de las innovaciones tradicionales.
+
+\section{Consideraciones éticas}
+
+La evaluación ética de este proyecto se aborda desde dos perspectivas filosóficas complementarias.
+
+Desde una \textbf{mirada deontológica (Kant)}, el diseño prioriza el deber hacia los participantes mediante:
+\begin{itemize}
+    \item \textbf{Participación voluntaria y consentimiento informado:} Se garantizará que cada sujeto comprenda plenamente el alcance del estudio antes de aceptar, asegurando su autonomía.
+    \item \textbf{Retiro sin penalidades:} Los participantes podrán abandonar el estudio en cualquier momento sin sufrir consecuencias negativas.
+    \item \textbf{Transparencia en los incentivos:} Las recompensas por participación serán claras y no coercitivas.
+    \item \textbf{Protección de datos personales:} Se aplicarán protocolos estrictos para resguardar la privacidad y el anonimato de la información recolectada.
+\end{itemize}
+
+Desde una \textbf{mirada consecuencialista (Bentham, Mill)}, se busca maximizar el bienestar general y minimizar los daños:
+\begin{itemize}
+    \item \textbf{Minimización de daños:} Se proveerá soporte técnico continuo para evitar frustraciones o perjuicios por el uso de la tecnología, y se establecerán límites a los incentivos para evitar conductas de riesgo.
+    \item \textbf{Beneficio social:} El conocimiento generado permitirá optimizar políticas públicas de inclusión digital, generando un impacto positivo en la sociedad. Además, se contempla extender los beneficios (capacitación, acceso) al grupo control una vez finalizado el estudio para asegurar la equidad.
+\end{itemize}
+
+Finalmente, se plantea la discusión sobre si es ético intervenir en el mercado para acelerar la adopción tecnológica. Concluimos que, al tratarse de herramientas de inclusión financiera (billeteras virtuales) o de acceso al conocimiento (IA), la intervención se justifica por su potencial para reducir brechas de desigualdad.
+
+\section{Utilización de IA}
+
+Para la realización de este trabajo se utilizaron herramientas de Inteligencia Artificial Generativa.
+
+En primer lugar, se emplearon modelos de lenguaje para la búsqueda y síntesis de bibliografía teórica relacionada con la difusión de innovaciones, así como para la revisión de estilo y redacción.
+
+Si bien la IA facilitó el acceso rápido a marcos teóricos clásicos y la estructuración de ideas, se identificaron limitaciones en la precisión de citas específicas, lo que requirió una verificación manual.
+
+\printbibliography
+
+\end{document}

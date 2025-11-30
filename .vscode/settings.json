@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "/home/segu/repos/open-truco/open_spiel/open_spiel",
+    "python.analysis.extraPaths": [
+        "open_spiel"
+    ]
+}
