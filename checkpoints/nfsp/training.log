@@ -1,0 +1,160 @@
+2025-11-30 05:57:50 | INFO     | nfsp | ============================================================
+2025-11-30 05:57:50 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 05:57:50 | INFO     | nfsp | ============================================================
+2025-11-30 05:57:50 | INFO     | nfsp | Configuration: debug
+2025-11-30 05:57:50 | INFO     | nfsp |   Episodes: 1000
+2025-11-30 05:57:50 | INFO     | nfsp |   Hidden layers: (32, 32)
+2025-11-30 05:57:50 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 05:57:50 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 05:57:50 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 05:57:50 | INFO     | nfsp | Starting training...
+2025-11-30 05:59:04 | INFO     | nfsp | ============================================================
+2025-11-30 05:59:04 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 05:59:04 | INFO     | nfsp | ============================================================
+2025-11-30 05:59:04 | INFO     | nfsp | Configuration: debug
+2025-11-30 05:59:04 | INFO     | nfsp |   Episodes: 100
+2025-11-30 05:59:04 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 05:59:04 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 05:59:04 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 05:59:04 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 05:59:04 | INFO     | nfsp | Starting training...
+2025-11-30 06:15:14 | INFO     | nfsp | ============================================================
+2025-11-30 06:15:14 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 06:15:14 | INFO     | nfsp | ============================================================
+2025-11-30 06:15:14 | INFO     | nfsp | Configuration: debug
+2025-11-30 06:15:14 | INFO     | nfsp |   Episodes: 100
+2025-11-30 06:15:14 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 06:15:14 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 06:15:14 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 06:15:14 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 06:15:14 | INFO     | nfsp | Starting training...
+2025-11-30 06:22:43 | INFO     | nfsp | ============================================================
+2025-11-30 06:22:43 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 06:22:43 | INFO     | nfsp | ============================================================
+2025-11-30 06:22:43 | INFO     | nfsp | Configuration: debug
+2025-11-30 06:22:43 | INFO     | nfsp |   Episodes: 100
+2025-11-30 06:22:43 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 06:22:43 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 06:22:43 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 06:22:43 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 06:22:43 | INFO     | nfsp | Starting training...
+2025-11-30 06:24:00 | INFO     | nfsp | ============================================================
+2025-11-30 06:24:00 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 06:24:00 | INFO     | nfsp | ============================================================
+2025-11-30 06:24:00 | INFO     | nfsp | Configuration: debug
+2025-11-30 06:24:00 | INFO     | nfsp |   Episodes: 100
+2025-11-30 06:24:00 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 06:24:00 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 06:24:00 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 06:24:00 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 06:24:00 | INFO     | nfsp | Starting training...
+2025-11-30 06:52:33 | INFO     | nfsp | ============================================================
+2025-11-30 06:52:33 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 06:52:33 | INFO     | nfsp | ============================================================
+2025-11-30 06:52:33 | INFO     | nfsp | Configuration: debug
+2025-11-30 06:52:33 | INFO     | nfsp |   Episodes: 100
+2025-11-30 06:52:33 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 06:52:33 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 06:52:33 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 06:52:33 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 06:52:33 | INFO     | nfsp | Starting training...
+2025-11-30 07:00:49 | INFO     | nfsp | ============================================================
+2025-11-30 07:00:49 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:00:49 | INFO     | nfsp | ============================================================
+2025-11-30 07:00:49 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:00:49 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:00:49 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 07:00:49 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:00:49 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:00:49 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:00:49 | INFO     | nfsp | Starting training...
+2025-11-30 07:23:38 | INFO     | nfsp | ============================================================
+2025-11-30 07:23:38 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:23:38 | INFO     | nfsp | ============================================================
+2025-11-30 07:23:38 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:23:38 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:23:38 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 07:23:38 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:23:38 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:23:38 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:23:38 | INFO     | nfsp | Starting training...
+2025-11-30 07:31:29 | INFO     | nfsp | ============================================================
+2025-11-30 07:31:29 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:31:29 | INFO     | nfsp | ============================================================
+2025-11-30 07:31:29 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:31:29 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:31:29 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 07:31:29 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:31:29 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:31:29 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:31:29 | INFO     | nfsp | Starting training...
+2025-11-30 07:32:52 | INFO     | nfsp | ============================================================
+2025-11-30 07:32:52 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:32:52 | INFO     | nfsp | ============================================================
+2025-11-30 07:32:52 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:32:52 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:32:52 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 07:32:52 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:32:52 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:32:52 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:32:52 | INFO     | nfsp | Starting training...
+2025-11-30 07:42:46 | INFO     | nfsp | ============================================================
+2025-11-30 07:42:46 | INFO     | nfsp | Training Complete!
+2025-11-30 07:42:46 | INFO     | nfsp |   Total time: 592.6s
+2025-11-30 07:42:46 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:42:46 | INFO     | nfsp | ============================================================
+2025-11-30 07:42:54 | INFO     | nfsp | ============================================================
+2025-11-30 07:42:54 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:42:54 | INFO     | nfsp | ============================================================
+2025-11-30 07:42:54 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:42:54 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:42:54 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 07:42:54 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:42:54 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:42:54 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:42:54 | INFO     | nfsp | Starting training...
+2025-11-30 07:53:06 | INFO     | nfsp | ============================================================
+2025-11-30 07:53:06 | INFO     | nfsp | Training Complete!
+2025-11-30 07:53:06 | INFO     | nfsp |   Total time: 611.0s
+2025-11-30 07:53:06 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:53:06 | INFO     | nfsp | ============================================================
+2025-11-30 07:55:41 | INFO     | nfsp | ============================================================
+2025-11-30 07:55:41 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:55:41 | INFO     | nfsp | ============================================================
+2025-11-30 07:55:41 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:55:41 | INFO     | nfsp |   Episodes: 100
+2025-11-30 07:55:41 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 07:55:41 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:55:41 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:55:41 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:55:41 | INFO     | nfsp | Starting training...
+2025-11-30 07:57:34 | INFO     | nfsp | ============================================================
+2025-11-30 07:57:34 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:57:34 | INFO     | nfsp | ============================================================
+2025-11-30 07:57:34 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:57:34 | INFO     | nfsp |   Episodes: 300
+2025-11-30 07:57:34 | INFO     | nfsp |   Hidden layers: (32, 32)
+2025-11-30 07:57:34 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:57:34 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:57:34 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:57:34 | INFO     | nfsp | Starting training...
+2025-11-30 07:58:02 | INFO     | nfsp | ============================================================
+2025-11-30 07:58:02 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 07:58:02 | INFO     | nfsp | ============================================================
+2025-11-30 07:58:02 | INFO     | nfsp | Configuration: debug
+2025-11-30 07:58:02 | INFO     | nfsp |   Episodes: 3000
+2025-11-30 07:58:02 | INFO     | nfsp |   Hidden layers: (32, 32)
+2025-11-30 07:58:02 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 07:58:02 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 07:58:02 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 07:58:02 | INFO     | nfsp | Starting training...
+2025-11-30 08:15:48 | INFO     | nfsp | ============================================================
+2025-11-30 08:15:48 | INFO     | nfsp | NFSP Training for Truco
+2025-11-30 08:15:48 | INFO     | nfsp | ============================================================
+2025-11-30 08:15:48 | INFO     | nfsp | Configuration: debug
+2025-11-30 08:15:48 | INFO     | nfsp |   Episodes: 100
+2025-11-30 08:15:48 | INFO     | nfsp |   Hidden layers: (16, 16)
+2025-11-30 08:15:48 | INFO     | nfsp |   Anticipatory param: 0.1
+2025-11-30 08:15:48 | INFO     | nfsp |   Checkpoint dir: checkpoints/nfsp
+2025-11-30 08:15:48 | INFO     | nfsp | Evaluation enabled: 50 games vs ['random', 'ismcts_100']
+2025-11-30 08:15:48 | INFO     | nfsp | Starting training...

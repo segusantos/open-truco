@@ -7,6 +7,11 @@ requires-python = ">=3.13"
 dependencies = [
     "torch>=2.0",
     "numpy",
+    "dm-haiku>=0.0.15",
+    "jax>=0.8.1",
+    "optax>=0.2.6",
+    "rlax>=0.1.8",
+    "flax>=0.12.1",
 ]
 
 [tool.uv.sources]

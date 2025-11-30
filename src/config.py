@@ -207,11 +207,11 @@ def get_debug_config() -> dict:
             eval_freq=1,
         ),
         "nfsp": NFSPConfig(
-            num_train_episodes=1000,
-            eval_every=100,
-            hidden_layers_sizes=(32, 32),
-            replay_buffer_capacity=int(1e3),
-            reservoir_buffer_capacity=int(1e4),
+            num_train_episodes=100,
+            eval_every=10,
+            hidden_layers_sizes=(16, 16),
+            replay_buffer_capacity=int(1e2),
+            reservoir_buffer_capacity=int(1e3),
         ),
         "ppo": PPOConfig(
             total_timesteps=10000,

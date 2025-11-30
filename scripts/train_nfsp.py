@@ -30,6 +30,15 @@ from src.evaluation.tournament import create_evaluation_callback
 from src.utils.logging import setup_logger
 
 
+if not logging.getLogger().hasHandlers():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+logger = logging.getLogger("nfsp")
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Train NFSP agent on Truco")
     

@@ -142,6 +142,7 @@ class NFSPTrainer:
         losses_history = []
         
         for episode in range(1, self.config.num_train_episodes + 1):
+            print("Episode:", episode)
             self.episode = episode
             
             # Run one episode

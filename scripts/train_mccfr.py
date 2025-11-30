@@ -36,15 +36,15 @@ def get_config(name: str) -> MCCFRConfig:
     """Get predefined configuration by name."""
     configs = {
         "debug": MCCFRConfig(
-            num_iterations=10_000,
+            num_iterations=20_000,
             checkpoint_freq=5_000,
             eval_freq=5_000,
             checkpoint_dir=Path("checkpoints/mccfr_debug"),
         ),
         "local": MCCFRConfig(
-            num_iterations=1_000_000,
-            checkpoint_freq=100_000,
-            eval_freq=100_000,
+            num_iterations=50_000,
+            checkpoint_freq=5_000,
+            eval_freq=5_000,
             checkpoint_dir=Path("checkpoints/mccfr_local"),
         ),
         "full": MCCFRConfig(
