@@ -1,0 +1,422 @@
+2025-11-30 18:24:57,890 | INFO     | ============================================================
+2025-11-30 18:24:57,891 | INFO     | Grid Search for NFSP Hyperparameters
+2025-11-30 18:24:57,891 | INFO     | ============================================================
+2025-11-30 18:24:57,891 | INFO     | Testing configuration: hidden_layers=(16, 16), anticipatory=0.1
+2025-11-30 18:24:57,892 | INFO     | Loaded game: truco
+2025-11-30 18:24:57,892 | INFO     |   Num players: 2
+2025-11-30 18:24:57,892 | INFO     |   Num actions: 46
+2025-11-30 18:24:59,030 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 18:25:22,314 | INFO     | Episode 2000/14000 | Losses: [(Array(3.1852114, dtype=float32), None), (Array(3.5100236, dtype=float32), None)]
+2025-11-30 18:25:22,315 | INFO     | Evaluating at episode 2000
+2025-11-30 18:26:12,934 | INFO     | Win rate win_rate_vs_random: 42.00%
+2025-11-30 18:26:12,934 | INFO     | Win rate win_rate_vs_ismcts_100: 49.00%
+2025-11-30 18:26:12,934 | INFO     | Eval metrics: {'wins_vs_random': 21, 'win_rate_vs_random': 0.42, 'games_vs_random': 50, 'wins_vs_ismcts_100': 13, 'win_rate_vs_ismcts_100': 0.49, 'games_vs_ismcts_100': 50}
+2025-11-30 18:26:44,124 | INFO     | Episode 4000/14000 | Losses: [(Array(2.807841, dtype=float32), None), (Array(2.3072999, dtype=float32), None)]
+2025-11-30 18:26:44,124 | INFO     | Evaluating at episode 4000
+2025-11-30 18:27:41,890 | INFO     | Win rate win_rate_vs_random: 54.00%
+2025-11-30 18:27:41,890 | INFO     | Win rate win_rate_vs_ismcts_100: 41.00%
+2025-11-30 18:27:41,890 | INFO     | Eval metrics: {'wins_vs_random': 27, 'win_rate_vs_random': 0.54, 'games_vs_random': 50, 'wins_vs_ismcts_100': 9, 'win_rate_vs_ismcts_100': 0.41000000000000003, 'games_vs_ismcts_100': 50}
+2025-11-30 18:27:59,036 | INFO     | Episode 6000/14000 | Losses: [(Array(2.503728, dtype=float32), None), (Array(2.0696683, dtype=float32), None)]
+2025-11-30 18:27:59,037 | INFO     | Evaluating at episode 6000
+2025-11-30 18:28:37,887 | INFO     | Win rate win_rate_vs_random: 62.00%
+2025-11-30 18:28:37,887 | INFO     | Win rate win_rate_vs_ismcts_100: 63.00%
+2025-11-30 18:28:37,887 | INFO     | Eval metrics: {'wins_vs_random': 31, 'win_rate_vs_random': 0.62, 'games_vs_random': 50, 'wins_vs_ismcts_100': 20, 'win_rate_vs_ismcts_100': 0.63, 'games_vs_ismcts_100': 50}
+2025-11-30 18:28:54,455 | INFO     | Episode 8000/14000 | Losses: [(Array(2.2942955, dtype=float32), None), (Array(1.942042, dtype=float32), None)]
+2025-11-30 18:28:54,455 | INFO     | Evaluating at episode 8000
+2025-11-30 18:29:41,140 | INFO     | Win rate win_rate_vs_random: 60.00%
+2025-11-30 18:29:41,140 | INFO     | Win rate win_rate_vs_ismcts_100: 43.00%
+2025-11-30 18:29:41,140 | INFO     | Eval metrics: {'wins_vs_random': 30, 'win_rate_vs_random': 0.6, 'games_vs_random': 50, 'wins_vs_ismcts_100': 10, 'win_rate_vs_ismcts_100': 0.43000000000000005, 'games_vs_ismcts_100': 50}
+2025-11-30 18:29:52,522 | INFO     | Episode 10000/14000 | Losses: [(Array(2.341617, dtype=float32), None), (Array(1.7992592, dtype=float32), None)]
+2025-11-30 18:29:52,522 | INFO     | Evaluating at episode 10000
+2025-11-30 18:30:34,766 | INFO     | Win rate win_rate_vs_random: 58.00%
+2025-11-30 18:30:34,766 | INFO     | Win rate win_rate_vs_ismcts_100: 47.00%
+2025-11-30 18:30:34,767 | INFO     | Eval metrics: {'wins_vs_random': 29, 'win_rate_vs_random': 0.58, 'games_vs_random': 50, 'wins_vs_ismcts_100': 12, 'win_rate_vs_ismcts_100': 0.47, 'games_vs_ismcts_100': 50}
+2025-11-30 18:30:44,615 | INFO     | Episode 12000/14000 | Losses: [(Array(1.8334931, dtype=float32), None), (Array(1.570631, dtype=float32), None)]
+2025-11-30 18:30:44,615 | INFO     | Evaluating at episode 12000
+2025-11-30 18:31:37,870 | INFO     | Win rate win_rate_vs_random: 48.00%
+2025-11-30 18:31:37,870 | INFO     | Win rate win_rate_vs_ismcts_100: 61.00%
+2025-11-30 18:31:37,870 | INFO     | Eval metrics: {'wins_vs_random': 24, 'win_rate_vs_random': 0.48, 'games_vs_random': 50, 'wins_vs_ismcts_100': 19, 'win_rate_vs_ismcts_100': 0.61, 'games_vs_ismcts_100': 50}
+2025-11-30 18:31:50,149 | INFO     | Episode 14000/14000 | Losses: [(Array(2.198967, dtype=float32), None), (Array(1.6679995, dtype=float32), None)]
+2025-11-30 18:31:50,150 | INFO     | Evaluating at episode 14000
+2025-11-30 18:32:34,030 | INFO     | Win rate win_rate_vs_random: 42.00%
+2025-11-30 18:32:34,030 | INFO     | Win rate win_rate_vs_ismcts_100: 55.00%
+2025-11-30 18:32:34,030 | INFO     | Eval metrics: {'wins_vs_random': 21, 'win_rate_vs_random': 0.42, 'games_vs_random': 50, 'wins_vs_ismcts_100': 16, 'win_rate_vs_ismcts_100': 0.55, 'games_vs_ismcts_100': 50}
+2025-11-30 18:32:34,031 | INFO     | Training completed in 455.00s
+2025-11-30 18:32:34,037 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 18:32:34,038 | INFO     | Evaluation metrics for config (16, 16), 0.1:
+2025-11-30 18:32:34,038 | INFO     |   total_time: 455.0004971027374
+2025-11-30 18:32:34,038 | INFO     |   episodes: 14000
+2025-11-30 18:32:34,039 | INFO     |   final_losses: [(Array(2.198967, dtype=float32), None), (Array(1.6679995, dtype=float32), None)]
+2025-11-30 18:32:34,040 | INFO     | Testing configuration: hidden_layers=(16, 16), anticipatory=0.5
+2025-11-30 18:32:34,042 | INFO     | Loaded game: truco
+2025-11-30 18:32:34,042 | INFO     |   Num players: 2
+2025-11-30 18:32:34,042 | INFO     |   Num actions: 46
+2025-11-30 18:32:34,073 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 18:32:53,732 | INFO     | Episode 2000/14000 | Losses: [(Array(3.1827886, dtype=float32), None), (Array(2.9878883, dtype=float32), None)]
+2025-11-30 18:32:53,732 | INFO     | Evaluating at episode 2000
+2025-11-30 18:34:07,562 | INFO     | Win rate win_rate_vs_random: 38.00%
+2025-11-30 18:34:07,562 | INFO     | Win rate win_rate_vs_ismcts_100: 55.00%
+2025-11-30 18:34:07,563 | INFO     | Eval metrics: {'wins_vs_random': 19, 'win_rate_vs_random': 0.38, 'games_vs_random': 50, 'wins_vs_ismcts_100': 16, 'win_rate_vs_ismcts_100': 0.55, 'games_vs_ismcts_100': 50}
+2025-11-30 18:34:24,794 | INFO     | Episode 4000/14000 | Losses: [(Array(2.7023375, dtype=float32), None), (Array(2.3843756, dtype=float32), None)]
+2025-11-30 18:34:24,794 | INFO     | Evaluating at episode 4000
+2025-11-30 18:35:22,531 | INFO     | Win rate win_rate_vs_random: 58.00%
+2025-11-30 18:35:22,531 | INFO     | Win rate win_rate_vs_ismcts_100: 45.00%
+2025-11-30 18:35:22,531 | INFO     | Eval metrics: {'wins_vs_random': 29, 'win_rate_vs_random': 0.58, 'games_vs_random': 50, 'wins_vs_ismcts_100': 11, 'win_rate_vs_ismcts_100': 0.45, 'games_vs_ismcts_100': 50}
+2025-11-30 18:35:36,512 | INFO     | Episode 6000/14000 | Losses: [(Array(2.6013231, dtype=float32), None), (Array(2.4395394, dtype=float32), None)]
+2025-11-30 18:35:36,512 | INFO     | Evaluating at episode 6000
+2025-11-30 18:36:31,913 | INFO     | Win rate win_rate_vs_random: 54.00%
+2025-11-30 18:36:31,913 | INFO     | Win rate win_rate_vs_ismcts_100: 53.00%
+2025-11-30 18:36:31,913 | INFO     | Eval metrics: {'wins_vs_random': 27, 'win_rate_vs_random': 0.54, 'games_vs_random': 50, 'wins_vs_ismcts_100': 15, 'win_rate_vs_ismcts_100': 0.53, 'games_vs_ismcts_100': 50}
+2025-11-30 18:36:43,440 | INFO     | Episode 8000/14000 | Losses: [(Array(2.4747963, dtype=float32), None), (Array(2.1962705, dtype=float32), None)]
+2025-11-30 18:36:43,441 | INFO     | Evaluating at episode 8000
+2025-11-30 18:37:26,709 | INFO     | Win rate win_rate_vs_random: 56.00%
+2025-11-30 18:37:26,709 | INFO     | Win rate win_rate_vs_ismcts_100: 53.00%
+2025-11-30 18:37:26,709 | INFO     | Eval metrics: {'wins_vs_random': 28, 'win_rate_vs_random': 0.56, 'games_vs_random': 50, 'wins_vs_ismcts_100': 15, 'win_rate_vs_ismcts_100': 0.53, 'games_vs_ismcts_100': 50}
+2025-11-30 18:37:39,691 | INFO     | Episode 10000/14000 | Losses: [(Array(2.2784352, dtype=float32), None), (Array(2.233078, dtype=float32), None)]
+2025-11-30 18:37:39,691 | INFO     | Evaluating at episode 10000
+2025-11-30 18:38:17,430 | INFO     | Win rate win_rate_vs_random: 58.00%
+2025-11-30 18:38:17,431 | INFO     | Win rate win_rate_vs_ismcts_100: 63.00%
+2025-11-30 18:38:17,431 | INFO     | Eval metrics: {'wins_vs_random': 29, 'win_rate_vs_random': 0.58, 'games_vs_random': 50, 'wins_vs_ismcts_100': 20, 'win_rate_vs_ismcts_100': 0.63, 'games_vs_ismcts_100': 50}
+2025-11-30 18:38:26,356 | INFO     | Episode 12000/14000 | Losses: [(Array(2.418784, dtype=float32), None), (Array(2.081662, dtype=float32), None)]
+2025-11-30 18:38:26,356 | INFO     | Evaluating at episode 12000
+2025-11-30 18:39:07,128 | INFO     | Win rate win_rate_vs_random: 46.00%
+2025-11-30 18:39:07,129 | INFO     | Win rate win_rate_vs_ismcts_100: 57.00%
+2025-11-30 18:39:07,129 | INFO     | Eval metrics: {'wins_vs_random': 23, 'win_rate_vs_random': 0.46, 'games_vs_random': 50, 'wins_vs_ismcts_100': 17, 'win_rate_vs_ismcts_100': 0.5700000000000001, 'games_vs_ismcts_100': 50}
+2025-11-30 18:39:18,886 | INFO     | Episode 14000/14000 | Losses: [(Array(1.973999, dtype=float32), None), (Array(1.8210864, dtype=float32), None)]
+2025-11-30 18:39:18,887 | INFO     | Evaluating at episode 14000
+2025-11-30 18:40:08,641 | INFO     | Win rate win_rate_vs_random: 50.00%
+2025-11-30 18:40:08,642 | INFO     | Win rate win_rate_vs_ismcts_100: 55.00%
+2025-11-30 18:40:08,642 | INFO     | Eval metrics: {'wins_vs_random': 25, 'win_rate_vs_random': 0.5, 'games_vs_random': 50, 'wins_vs_ismcts_100': 16, 'win_rate_vs_ismcts_100': 0.55, 'games_vs_ismcts_100': 50}
+2025-11-30 18:40:08,642 | INFO     | Training completed in 454.57s
+2025-11-30 18:40:08,644 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 18:40:08,644 | INFO     | Evaluation metrics for config (16, 16), 0.5:
+2025-11-30 18:40:08,644 | INFO     |   total_time: 454.5684540271759
+2025-11-30 18:40:08,645 | INFO     |   episodes: 14000
+2025-11-30 18:40:08,645 | INFO     |   final_losses: [(Array(1.973999, dtype=float32), None), (Array(1.8210864, dtype=float32), None)]
+2025-11-30 18:40:08,645 | INFO     | Testing configuration: hidden_layers=(16, 16), anticipatory=0.9
+2025-11-30 18:40:08,647 | INFO     | Loaded game: truco
+2025-11-30 18:40:08,647 | INFO     |   Num players: 2
+2025-11-30 18:40:08,647 | INFO     |   Num actions: 46
+2025-11-30 18:40:08,705 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 18:40:18,550 | INFO     | Episode 2000/14000 | Losses: [(Array(3.4153438, dtype=float32), None), (Array(3.4960098, dtype=float32), None)]
+2025-11-30 18:40:18,550 | INFO     | Evaluating at episode 2000
+2025-11-30 18:41:11,817 | INFO     | Win rate win_rate_vs_random: 46.00%
+2025-11-30 18:41:11,817 | INFO     | Win rate win_rate_vs_ismcts_100: 55.00%
+2025-11-30 18:41:11,817 | INFO     | Eval metrics: {'wins_vs_random': 23, 'win_rate_vs_random': 0.46, 'games_vs_random': 50, 'wins_vs_ismcts_100': 16, 'win_rate_vs_ismcts_100': 0.55, 'games_vs_ismcts_100': 50}
+2025-11-30 18:41:20,905 | INFO     | Episode 4000/14000 | Losses: [(Array(2.8934908, dtype=float32), None), (Array(2.9069352, dtype=float32), None)]
+2025-11-30 18:41:20,905 | INFO     | Evaluating at episode 4000
+2025-11-30 18:42:07,355 | INFO     | Win rate win_rate_vs_random: 54.00%
+2025-11-30 18:42:07,355 | INFO     | Win rate win_rate_vs_ismcts_100: 41.00%
+2025-11-30 18:42:07,355 | INFO     | Eval metrics: {'wins_vs_random': 27, 'win_rate_vs_random': 0.54, 'games_vs_random': 50, 'wins_vs_ismcts_100': 9, 'win_rate_vs_ismcts_100': 0.41000000000000003, 'games_vs_ismcts_100': 50}
+2025-11-30 18:42:19,059 | INFO     | Episode 6000/14000 | Losses: [(Array(2.660581, dtype=float32), None), (Array(2.5701284, dtype=float32), None)]
+2025-11-30 18:42:19,060 | INFO     | Evaluating at episode 6000
+2025-11-30 18:43:06,932 | INFO     | Win rate win_rate_vs_random: 46.00%
+2025-11-30 18:43:06,932 | INFO     | Win rate win_rate_vs_ismcts_100: 51.00%
+2025-11-30 18:43:06,932 | INFO     | Eval metrics: {'wins_vs_random': 23, 'win_rate_vs_random': 0.46, 'games_vs_random': 50, 'wins_vs_ismcts_100': 14, 'win_rate_vs_ismcts_100': 0.51, 'games_vs_ismcts_100': 50}
+2025-11-30 18:43:15,415 | INFO     | Episode 8000/14000 | Losses: [(Array(2.5280504, dtype=float32), None), (Array(2.3009443, dtype=float32), None)]
+2025-11-30 18:43:15,415 | INFO     | Evaluating at episode 8000
+2025-11-30 18:43:53,016 | INFO     | Win rate win_rate_vs_random: 56.00%
+2025-11-30 18:43:53,016 | INFO     | Win rate win_rate_vs_ismcts_100: 59.00%
+2025-11-30 18:43:53,016 | INFO     | Eval metrics: {'wins_vs_random': 28, 'win_rate_vs_random': 0.56, 'games_vs_random': 50, 'wins_vs_ismcts_100': 18, 'win_rate_vs_ismcts_100': 0.59, 'games_vs_ismcts_100': 50}
+2025-11-30 18:44:04,517 | INFO     | Episode 10000/14000 | Losses: [(Array(2.373866, dtype=float32), None), (Array(2.330811, dtype=float32), None)]
+2025-11-30 18:44:04,517 | INFO     | Evaluating at episode 10000
+2025-11-30 18:44:42,465 | INFO     | Win rate win_rate_vs_random: 66.00%
+2025-11-30 18:44:42,466 | INFO     | Win rate win_rate_vs_ismcts_100: 49.00%
+2025-11-30 18:44:42,466 | INFO     | Eval metrics: {'wins_vs_random': 33, 'win_rate_vs_random': 0.66, 'games_vs_random': 50, 'wins_vs_ismcts_100': 13, 'win_rate_vs_ismcts_100': 0.49, 'games_vs_ismcts_100': 50}
+2025-11-30 18:44:51,085 | INFO     | Episode 12000/14000 | Losses: [(Array(2.1557937, dtype=float32), None), (Array(2.3208313, dtype=float32), None)]
+2025-11-30 18:44:51,085 | INFO     | Evaluating at episode 12000
+2025-11-30 18:45:45,701 | INFO     | Win rate win_rate_vs_random: 46.00%
+2025-11-30 18:45:45,702 | INFO     | Win rate win_rate_vs_ismcts_100: 43.00%
+2025-11-30 18:45:45,702 | INFO     | Eval metrics: {'wins_vs_random': 23, 'win_rate_vs_random': 0.46, 'games_vs_random': 50, 'wins_vs_ismcts_100': 10, 'win_rate_vs_ismcts_100': 0.43000000000000005, 'games_vs_ismcts_100': 50}
+2025-11-30 18:45:54,232 | INFO     | Episode 14000/14000 | Losses: [(Array(2.352789, dtype=float32), None), (Array(2.1806948, dtype=float32), None)]
+2025-11-30 18:45:54,232 | INFO     | Evaluating at episode 14000
+2025-11-30 18:46:42,542 | INFO     | Win rate win_rate_vs_random: 50.00%
+2025-11-30 18:46:42,542 | INFO     | Win rate win_rate_vs_ismcts_100: 47.00%
+2025-11-30 18:46:42,542 | INFO     | Eval metrics: {'wins_vs_random': 25, 'win_rate_vs_random': 0.5, 'games_vs_random': 50, 'wins_vs_ismcts_100': 12, 'win_rate_vs_ismcts_100': 0.47, 'games_vs_ismcts_100': 50}
+2025-11-30 18:46:42,542 | INFO     | Training completed in 393.84s
+2025-11-30 18:46:42,544 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 18:46:42,545 | INFO     | Evaluation metrics for config (16, 16), 0.9:
+2025-11-30 18:46:42,545 | INFO     |   total_time: 393.8372731208801
+2025-11-30 18:46:42,545 | INFO     |   episodes: 14000
+2025-11-30 18:46:42,546 | INFO     |   final_losses: [(Array(2.352789, dtype=float32), None), (Array(2.1806948, dtype=float32), None)]
+2025-11-30 18:46:42,546 | INFO     | Testing configuration: hidden_layers=(32, 32), anticipatory=0.1
+2025-11-30 18:46:42,549 | INFO     | Loaded game: truco
+2025-11-30 18:46:42,549 | INFO     |   Num players: 2
+2025-11-30 18:46:42,549 | INFO     |   Num actions: 46
+2025-11-30 18:46:43,592 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 18:47:42,983 | INFO     | Episode 2000/14000 | Losses: [(Array(1.9766241, dtype=float32), None), (Array(1.8988979, dtype=float32), None)]
+2025-11-30 18:47:42,983 | INFO     | Evaluating at episode 2000
+2025-11-30 18:49:52,698 | INFO     | Win rate win_rate_vs_random: 24.00%
+2025-11-30 18:49:52,699 | INFO     | Win rate win_rate_vs_ismcts_100: 31.00%
+2025-11-30 18:49:52,699 | INFO     | Eval metrics: {'wins_vs_random': 12, 'win_rate_vs_random': 0.24, 'games_vs_random': 50, 'wins_vs_ismcts_100': 4, 'win_rate_vs_ismcts_100': 0.31, 'games_vs_ismcts_100': 50}
+2025-11-30 18:50:56,906 | INFO     | Episode 4000/14000 | Losses: [(Array(1.3284624, dtype=float32), None), (Array(1.4886466, dtype=float32), None)]
+2025-11-30 18:50:56,906 | INFO     | Evaluating at episode 4000
+2025-11-30 18:53:05,912 | INFO     | Win rate win_rate_vs_random: 26.00%
+2025-11-30 18:53:05,913 | INFO     | Win rate win_rate_vs_ismcts_100: 31.00%
+2025-11-30 18:53:05,913 | INFO     | Eval metrics: {'wins_vs_random': 13, 'win_rate_vs_random': 0.26, 'games_vs_random': 50, 'wins_vs_ismcts_100': 4, 'win_rate_vs_ismcts_100': 0.31, 'games_vs_ismcts_100': 50}
+2025-11-30 18:54:11,222 | INFO     | Episode 6000/14000 | Losses: [(Array(1.1973367, dtype=float32), None), (Array(0.833381, dtype=float32), None)]
+2025-11-30 18:54:11,222 | INFO     | Evaluating at episode 6000
+2025-11-30 18:56:04,076 | INFO     | Win rate win_rate_vs_random: 28.00%
+2025-11-30 18:56:04,076 | INFO     | Win rate win_rate_vs_ismcts_100: 45.00%
+2025-11-30 18:56:04,076 | INFO     | Eval metrics: {'wins_vs_random': 14, 'win_rate_vs_random': 0.28, 'games_vs_random': 50, 'wins_vs_ismcts_100': 11, 'win_rate_vs_ismcts_100': 0.45, 'games_vs_ismcts_100': 50}
+2025-11-30 18:57:11,194 | INFO     | Episode 8000/14000 | Losses: [(Array(0.846522, dtype=float32), None), (Array(0.8880657, dtype=float32), None)]
+2025-11-30 18:57:11,194 | INFO     | Evaluating at episode 8000
+2025-11-30 18:59:25,877 | INFO     | Win rate win_rate_vs_random: 16.00%
+2025-11-30 18:59:25,878 | INFO     | Win rate win_rate_vs_ismcts_100: 35.00%
+2025-11-30 18:59:25,878 | INFO     | Eval metrics: {'wins_vs_random': 8, 'win_rate_vs_random': 0.16, 'games_vs_random': 50, 'wins_vs_ismcts_100': 6, 'win_rate_vs_ismcts_100': 0.35, 'games_vs_ismcts_100': 50}
+2025-11-30 19:00:33,498 | INFO     | Episode 10000/14000 | Losses: [(Array(0.95397484, dtype=float32), None), (Array(0.7322279, dtype=float32), None)]
+2025-11-30 19:00:33,498 | INFO     | Evaluating at episode 10000
+2025-11-30 19:03:00,045 | INFO     | Win rate win_rate_vs_random: 22.00%
+2025-11-30 19:03:00,045 | INFO     | Win rate win_rate_vs_ismcts_100: 31.00%
+2025-11-30 19:03:00,045 | INFO     | Eval metrics: {'wins_vs_random': 11, 'win_rate_vs_random': 0.22, 'games_vs_random': 50, 'wins_vs_ismcts_100': 4, 'win_rate_vs_ismcts_100': 0.31, 'games_vs_ismcts_100': 50}
+2025-11-30 19:04:08,803 | INFO     | Episode 12000/14000 | Losses: [(Array(0.9036914, dtype=float32), None), (Array(0.73907673, dtype=float32), None)]
+2025-11-30 19:04:08,804 | INFO     | Evaluating at episode 12000
+2025-11-30 19:06:22,389 | INFO     | Win rate win_rate_vs_random: 22.00%
+2025-11-30 19:06:22,389 | INFO     | Win rate win_rate_vs_ismcts_100: 33.00%
+2025-11-30 19:06:22,389 | INFO     | Eval metrics: {'wins_vs_random': 11, 'win_rate_vs_random': 0.22, 'games_vs_random': 50, 'wins_vs_ismcts_100': 5, 'win_rate_vs_ismcts_100': 0.33, 'games_vs_ismcts_100': 50}
+2025-11-30 19:07:33,422 | INFO     | Episode 14000/14000 | Losses: [(Array(0.6818203, dtype=float32), None), (Array(0.70347345, dtype=float32), None)]
+2025-11-30 19:07:33,422 | INFO     | Evaluating at episode 14000
+2025-11-30 19:09:57,835 | INFO     | Win rate win_rate_vs_random: 14.00%
+2025-11-30 19:09:57,835 | INFO     | Win rate win_rate_vs_ismcts_100: 31.00%
+2025-11-30 19:09:57,835 | INFO     | Eval metrics: {'wins_vs_random': 7, 'win_rate_vs_random': 0.14, 'games_vs_random': 50, 'wins_vs_ismcts_100': 4, 'win_rate_vs_ismcts_100': 0.31, 'games_vs_ismcts_100': 50}
+2025-11-30 19:09:57,835 | INFO     | Training completed in 1394.24s
+2025-11-30 19:09:57,838 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 19:09:57,838 | INFO     | Evaluation metrics for config (32, 32), 0.1:
+2025-11-30 19:09:57,838 | INFO     |   total_time: 1394.2432525157928
+2025-11-30 19:09:57,839 | INFO     |   episodes: 14000
+2025-11-30 19:09:57,839 | INFO     |   final_losses: [(Array(0.6818203, dtype=float32), None), (Array(0.70347345, dtype=float32), None)]
+2025-11-30 19:09:57,839 | INFO     | Testing configuration: hidden_layers=(32, 32), anticipatory=0.5
+2025-11-30 19:09:57,841 | INFO     | Loaded game: truco
+2025-11-30 19:09:57,841 | INFO     |   Num players: 2
+2025-11-30 19:09:57,841 | INFO     |   Num actions: 46
+2025-11-30 19:09:57,866 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 19:11:08,693 | INFO     | Episode 2000/14000 | Losses: [(Array(1.9187572, dtype=float32), None), (Array(1.6719198, dtype=float32), None)]
+2025-11-30 19:11:08,693 | INFO     | Evaluating at episode 2000
+2025-11-30 19:13:32,801 | INFO     | Win rate win_rate_vs_random: 20.00%
+2025-11-30 19:13:32,801 | INFO     | Win rate win_rate_vs_ismcts_100: 33.00%
+2025-11-30 19:13:32,802 | INFO     | Eval metrics: {'wins_vs_random': 10, 'win_rate_vs_random': 0.2, 'games_vs_random': 50, 'wins_vs_ismcts_100': 5, 'win_rate_vs_ismcts_100': 0.33, 'games_vs_ismcts_100': 50}
+2025-11-30 19:14:43,049 | INFO     | Episode 4000/14000 | Losses: [(Array(1.2877614, dtype=float32), None), (Array(1.3087164, dtype=float32), None)]
+2025-11-30 19:14:43,049 | INFO     | Evaluating at episode 4000
+2025-11-30 19:16:54,195 | INFO     | Win rate win_rate_vs_random: 28.00%
+2025-11-30 19:16:54,195 | INFO     | Win rate win_rate_vs_ismcts_100: 29.00%
+2025-11-30 19:16:54,195 | INFO     | Eval metrics: {'wins_vs_random': 14, 'win_rate_vs_random': 0.28, 'games_vs_random': 50, 'wins_vs_ismcts_100': 3, 'win_rate_vs_ismcts_100': 0.29000000000000004, 'games_vs_ismcts_100': 50}
+2025-11-30 19:18:06,400 | INFO     | Episode 6000/14000 | Losses: [(Array(1.0996604, dtype=float32), None), (Array(1.2688512, dtype=float32), None)]
+2025-11-30 19:18:06,401 | INFO     | Evaluating at episode 6000
+2025-11-30 19:20:29,728 | INFO     | Win rate win_rate_vs_random: 28.00%
+2025-11-30 19:20:29,729 | INFO     | Win rate win_rate_vs_ismcts_100: 33.00%
+2025-11-30 19:20:29,729 | INFO     | Eval metrics: {'wins_vs_random': 14, 'win_rate_vs_random': 0.28, 'games_vs_random': 50, 'wins_vs_ismcts_100': 5, 'win_rate_vs_ismcts_100': 0.33, 'games_vs_ismcts_100': 50}
+2025-11-30 19:21:42,533 | INFO     | Episode 8000/14000 | Losses: [(Array(0.95407873, dtype=float32), None), (Array(1.1119113, dtype=float32), None)]
+2025-11-30 19:21:42,533 | INFO     | Evaluating at episode 8000
+2025-11-30 19:24:01,151 | INFO     | Win rate win_rate_vs_random: 24.00%
+2025-11-30 19:24:01,152 | INFO     | Win rate win_rate_vs_ismcts_100: 37.00%
+2025-11-30 19:24:01,152 | INFO     | Eval metrics: {'wins_vs_random': 12, 'win_rate_vs_random': 0.24, 'games_vs_random': 50, 'wins_vs_ismcts_100': 7, 'win_rate_vs_ismcts_100': 0.37, 'games_vs_ismcts_100': 50}
+2025-11-30 19:25:19,343 | INFO     | Episode 10000/14000 | Losses: [(Array(0.95936847, dtype=float32), None), (Array(0.79225934, dtype=float32), None)]
+2025-11-30 19:25:19,343 | INFO     | Evaluating at episode 10000
+2025-11-30 19:27:15,986 | INFO     | Win rate win_rate_vs_random: 30.00%
+2025-11-30 19:27:15,986 | INFO     | Win rate win_rate_vs_ismcts_100: 33.00%
+2025-11-30 19:27:15,986 | INFO     | Eval metrics: {'wins_vs_random': 15, 'win_rate_vs_random': 0.3, 'games_vs_random': 50, 'wins_vs_ismcts_100': 5, 'win_rate_vs_ismcts_100': 0.33, 'games_vs_ismcts_100': 50}
+2025-11-30 19:28:31,060 | INFO     | Episode 12000/14000 | Losses: [(Array(0.6252065, dtype=float32), None), (Array(0.75153923, dtype=float32), None)]
+2025-11-30 19:28:31,061 | INFO     | Evaluating at episode 12000
+2025-11-30 19:30:37,547 | INFO     | Win rate win_rate_vs_random: 30.00%
+2025-11-30 19:30:37,547 | INFO     | Win rate win_rate_vs_ismcts_100: 27.00%
+2025-11-30 19:30:37,547 | INFO     | Eval metrics: {'wins_vs_random': 15, 'win_rate_vs_random': 0.3, 'games_vs_random': 50, 'wins_vs_ismcts_100': 2, 'win_rate_vs_ismcts_100': 0.27, 'games_vs_ismcts_100': 50}
+2025-11-30 19:31:52,650 | INFO     | Episode 14000/14000 | Losses: [(Array(0.64658344, dtype=float32), None), (Array(0.65579563, dtype=float32), None)]
+2025-11-30 19:31:52,650 | INFO     | Evaluating at episode 14000
+2025-11-30 19:34:13,365 | INFO     | Win rate win_rate_vs_random: 28.00%
+2025-11-30 19:34:13,365 | INFO     | Win rate win_rate_vs_ismcts_100: 33.00%
+2025-11-30 19:34:13,365 | INFO     | Eval metrics: {'wins_vs_random': 14, 'win_rate_vs_random': 0.28, 'games_vs_random': 50, 'wins_vs_ismcts_100': 5, 'win_rate_vs_ismcts_100': 0.33, 'games_vs_ismcts_100': 50}
+2025-11-30 19:34:13,365 | INFO     | Training completed in 1455.50s
+2025-11-30 19:34:13,368 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 19:34:13,369 | INFO     | Evaluation metrics for config (32, 32), 0.5:
+2025-11-30 19:34:13,369 | INFO     |   total_time: 1455.4993686676025
+2025-11-30 19:34:13,369 | INFO     |   episodes: 14000
+2025-11-30 19:34:13,370 | INFO     |   final_losses: [(Array(0.64658344, dtype=float32), None), (Array(0.65579563, dtype=float32), None)]
+2025-11-30 19:34:13,370 | INFO     | Testing configuration: hidden_layers=(32, 32), anticipatory=0.9
+2025-11-30 19:34:13,373 | INFO     | Loaded game: truco
+2025-11-30 19:34:13,373 | INFO     |   Num players: 2
+2025-11-30 19:34:13,373 | INFO     |   Num actions: 46
+2025-11-30 19:34:13,408 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 19:35:28,562 | INFO     | Episode 2000/14000 | Losses: [(Array(1.7392365, dtype=float32), None), (Array(1.7608378, dtype=float32), None)]
+2025-11-30 19:35:28,563 | INFO     | Evaluating at episode 2000
+2025-11-30 19:37:48,585 | INFO     | Win rate win_rate_vs_random: 24.00%
+2025-11-30 19:37:48,585 | INFO     | Win rate win_rate_vs_ismcts_100: 25.00%
+2025-11-30 19:37:48,585 | INFO     | Eval metrics: {'wins_vs_random': 12, 'win_rate_vs_random': 0.24, 'games_vs_random': 50, 'wins_vs_ismcts_100': 1, 'win_rate_vs_ismcts_100': 0.25, 'games_vs_ismcts_100': 50}
+2025-11-30 19:39:04,459 | INFO     | Episode 4000/14000 | Losses: [(Array(1.5781872, dtype=float32), None), (Array(1.3822675, dtype=float32), None)]
+2025-11-30 19:39:04,460 | INFO     | Evaluating at episode 4000
+2025-11-30 19:41:21,885 | INFO     | Win rate win_rate_vs_random: 22.00%
+2025-11-30 19:41:21,886 | INFO     | Win rate win_rate_vs_ismcts_100: 33.00%
+2025-11-30 19:41:21,886 | INFO     | Eval metrics: {'wins_vs_random': 11, 'win_rate_vs_random': 0.22, 'games_vs_random': 50, 'wins_vs_ismcts_100': 5, 'win_rate_vs_ismcts_100': 0.33, 'games_vs_ismcts_100': 50}
+2025-11-30 19:42:40,198 | INFO     | Episode 6000/14000 | Losses: [(Array(1.3860573, dtype=float32), None), (Array(1.123918, dtype=float32), None)]
+2025-11-30 19:42:40,198 | INFO     | Evaluating at episode 6000
+2025-11-30 19:44:48,092 | INFO     | Win rate win_rate_vs_random: 18.00%
+2025-11-30 19:44:48,093 | INFO     | Win rate win_rate_vs_ismcts_100: 29.00%
+2025-11-30 19:44:48,093 | INFO     | Eval metrics: {'wins_vs_random': 9, 'win_rate_vs_random': 0.18, 'games_vs_random': 50, 'wins_vs_ismcts_100': 3, 'win_rate_vs_ismcts_100': 0.29000000000000004, 'games_vs_ismcts_100': 50}
+2025-11-30 19:46:04,705 | INFO     | Episode 8000/14000 | Losses: [(Array(1.1664966, dtype=float32), None), (Array(1.0336816, dtype=float32), None)]
+2025-11-30 19:46:04,706 | INFO     | Evaluating at episode 8000
+2025-11-30 19:48:01,655 | INFO     | Win rate win_rate_vs_random: 26.00%
+2025-11-30 19:48:01,655 | INFO     | Win rate win_rate_vs_ismcts_100: 37.00%
+2025-11-30 19:48:01,655 | INFO     | Eval metrics: {'wins_vs_random': 13, 'win_rate_vs_random': 0.26, 'games_vs_random': 50, 'wins_vs_ismcts_100': 7, 'win_rate_vs_ismcts_100': 0.37, 'games_vs_ismcts_100': 50}
+2025-11-30 19:49:22,183 | INFO     | Episode 10000/14000 | Losses: [(Array(0.98904085, dtype=float32), None), (Array(1.0282388, dtype=float32), None)]
+2025-11-30 19:49:22,183 | INFO     | Evaluating at episode 10000
+2025-11-30 19:51:42,504 | INFO     | Win rate win_rate_vs_random: 36.00%
+2025-11-30 19:51:42,504 | INFO     | Win rate win_rate_vs_ismcts_100: 23.00%
+2025-11-30 19:51:42,505 | INFO     | Eval metrics: {'wins_vs_random': 18, 'win_rate_vs_random': 0.36, 'games_vs_random': 50, 'wins_vs_ismcts_100': 0, 'win_rate_vs_ismcts_100': 0.23, 'games_vs_ismcts_100': 50}
+2025-11-30 19:53:04,000 | INFO     | Episode 12000/14000 | Losses: [(Array(0.71103096, dtype=float32), None), (Array(0.77005804, dtype=float32), None)]
+2025-11-30 19:53:04,000 | INFO     | Evaluating at episode 12000
+2025-11-30 19:55:19,670 | INFO     | Win rate win_rate_vs_random: 16.00%
+2025-11-30 19:55:19,670 | INFO     | Win rate win_rate_vs_ismcts_100: 35.00%
+2025-11-30 19:55:19,670 | INFO     | Eval metrics: {'wins_vs_random': 8, 'win_rate_vs_random': 0.16, 'games_vs_random': 50, 'wins_vs_ismcts_100': 6, 'win_rate_vs_ismcts_100': 0.35, 'games_vs_ismcts_100': 50}
+2025-11-30 19:56:45,633 | INFO     | Episode 14000/14000 | Losses: [(Array(0.65821207, dtype=float32), None), (Array(0.57253003, dtype=float32), None)]
+2025-11-30 19:56:45,633 | INFO     | Evaluating at episode 14000
+2025-11-30 19:58:46,902 | INFO     | Win rate win_rate_vs_random: 20.00%
+2025-11-30 19:58:46,902 | INFO     | Win rate win_rate_vs_ismcts_100: 29.00%
+2025-11-30 19:58:46,902 | INFO     | Eval metrics: {'wins_vs_random': 10, 'win_rate_vs_random': 0.2, 'games_vs_random': 50, 'wins_vs_ismcts_100': 3, 'win_rate_vs_ismcts_100': 0.29000000000000004, 'games_vs_ismcts_100': 50}
+2025-11-30 19:58:46,903 | INFO     | Training completed in 1473.49s
+2025-11-30 19:58:46,909 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 19:58:46,911 | INFO     | Evaluation metrics for config (32, 32), 0.9:
+2025-11-30 19:58:46,912 | INFO     |   total_time: 1473.4944331645966
+2025-11-30 19:58:46,912 | INFO     |   episodes: 14000
+2025-11-30 19:58:46,912 | INFO     |   final_losses: [(Array(0.65821207, dtype=float32), None), (Array(0.57253003, dtype=float32), None)]
+2025-11-30 19:58:46,914 | INFO     | Testing configuration: hidden_layers=(64, 64), anticipatory=0.1
+2025-11-30 19:58:46,919 | INFO     | Loaded game: truco
+2025-11-30 19:58:46,919 | INFO     |   Num players: 2
+2025-11-30 19:58:46,920 | INFO     |   Num actions: 46
+2025-11-30 19:58:48,546 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 19:59:14,067 | INFO     | Episode 2000/14000 | Losses: [(Array(3.1300266, dtype=float32), None), (Array(3.2323823, dtype=float32), None)]
+2025-11-30 19:59:14,067 | INFO     | Evaluating at episode 2000
+2025-11-30 20:00:36,065 | INFO     | Win rate win_rate_vs_random: 34.00%
+2025-11-30 20:00:36,065 | INFO     | Win rate win_rate_vs_ismcts_100: 49.00%
+2025-11-30 20:00:36,065 | INFO     | Eval metrics: {'wins_vs_random': 17, 'win_rate_vs_random': 0.34, 'games_vs_random': 50, 'wins_vs_ismcts_100': 13, 'win_rate_vs_ismcts_100': 0.49, 'games_vs_ismcts_100': 50}
+2025-11-30 20:01:06,085 | INFO     | Episode 4000/14000 | Losses: [(Array(2.9818263, dtype=float32), None), (Array(2.9003346, dtype=float32), None)]
+2025-11-30 20:01:06,085 | INFO     | Evaluating at episode 4000
+2025-11-30 20:02:22,358 | INFO     | Win rate win_rate_vs_random: 44.00%
+2025-11-30 20:02:22,358 | INFO     | Win rate win_rate_vs_ismcts_100: 49.00%
+2025-11-30 20:02:22,358 | INFO     | Eval metrics: {'wins_vs_random': 22, 'win_rate_vs_random': 0.44, 'games_vs_random': 50, 'wins_vs_ismcts_100': 13, 'win_rate_vs_ismcts_100': 0.49, 'games_vs_ismcts_100': 50}
+2025-11-30 20:02:43,023 | INFO     | Episode 6000/14000 | Losses: [(Array(2.4672604, dtype=float32), None), (Array(2.7848208, dtype=float32), None)]
+2025-11-30 20:02:43,024 | INFO     | Evaluating at episode 6000
+2025-11-30 20:04:02,501 | INFO     | Win rate win_rate_vs_random: 50.00%
+2025-11-30 20:04:02,501 | INFO     | Win rate win_rate_vs_ismcts_100: 49.00%
+2025-11-30 20:04:02,501 | INFO     | Eval metrics: {'wins_vs_random': 25, 'win_rate_vs_random': 0.5, 'games_vs_random': 50, 'wins_vs_ismcts_100': 13, 'win_rate_vs_ismcts_100': 0.49, 'games_vs_ismcts_100': 50}
+2025-11-30 20:04:20,655 | INFO     | Episode 8000/14000 | Losses: [(Array(2.2542424, dtype=float32), None), (Array(2.5800302, dtype=float32), None)]
+2025-11-30 20:04:20,655 | INFO     | Evaluating at episode 8000
+2025-11-30 20:05:20,774 | INFO     | Win rate win_rate_vs_random: 54.00%
+2025-11-30 20:05:20,774 | INFO     | Win rate win_rate_vs_ismcts_100: 43.00%
+2025-11-30 20:05:20,774 | INFO     | Eval metrics: {'wins_vs_random': 27, 'win_rate_vs_random': 0.54, 'games_vs_random': 50, 'wins_vs_ismcts_100': 10, 'win_rate_vs_ismcts_100': 0.43000000000000005, 'games_vs_ismcts_100': 50}
+2025-11-30 20:05:37,088 | INFO     | Episode 10000/14000 | Losses: [(Array(2.32623, dtype=float32), None), (Array(2.505622, dtype=float32), None)]
+2025-11-30 20:05:37,089 | INFO     | Evaluating at episode 10000
+2025-11-30 20:06:21,971 | INFO     | Win rate win_rate_vs_random: 46.00%
+2025-11-30 20:06:21,971 | INFO     | Win rate win_rate_vs_ismcts_100: 45.00%
+2025-11-30 20:06:21,971 | INFO     | Eval metrics: {'wins_vs_random': 23, 'win_rate_vs_random': 0.46, 'games_vs_random': 50, 'wins_vs_ismcts_100': 11, 'win_rate_vs_ismcts_100': 0.45, 'games_vs_ismcts_100': 50}
+2025-11-30 20:06:37,804 | INFO     | Episode 12000/14000 | Losses: [(Array(2.307396, dtype=float32), None), (Array(2.250887, dtype=float32), None)]
+2025-11-30 20:06:37,804 | INFO     | Evaluating at episode 12000
+2025-11-30 20:07:32,715 | INFO     | Win rate win_rate_vs_random: 60.00%
+2025-11-30 20:07:32,715 | INFO     | Win rate win_rate_vs_ismcts_100: 53.00%
+2025-11-30 20:07:32,715 | INFO     | Eval metrics: {'wins_vs_random': 30, 'win_rate_vs_random': 0.6, 'games_vs_random': 50, 'wins_vs_ismcts_100': 15, 'win_rate_vs_ismcts_100': 0.53, 'games_vs_ismcts_100': 50}
+2025-11-30 20:07:49,332 | INFO     | Episode 14000/14000 | Losses: [(Array(1.9366857, dtype=float32), None), (Array(2.206871, dtype=float32), None)]
+2025-11-30 20:07:49,332 | INFO     | Evaluating at episode 14000
+2025-11-30 20:09:02,821 | INFO     | Win rate win_rate_vs_random: 56.00%
+2025-11-30 20:09:02,822 | INFO     | Win rate win_rate_vs_ismcts_100: 55.00%
+2025-11-30 20:09:02,822 | INFO     | Eval metrics: {'wins_vs_random': 28, 'win_rate_vs_random': 0.56, 'games_vs_random': 50, 'wins_vs_ismcts_100': 9, 'win_rate_vs_ismcts_100': 0.55, 'games_vs_ismcts_100': 50}
+2025-11-30 20:09:02,822 | INFO     | Training completed in 614.28s
+2025-11-30 20:09:02,826 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 20:09:02,827 | INFO     | Evaluation metrics for config (64, 64), 0.1:
+2025-11-30 20:09:02,828 | INFO     |   total_time: 614.2757127285004
+2025-11-30 20:09:02,828 | INFO     |   episodes: 14000
+2025-11-30 20:09:02,828 | INFO     |   final_losses: [(Array(1.9366857, dtype=float32), None), (Array(2.206871, dtype=float32), None)]
+2025-11-30 20:09:02,830 | INFO     | Testing configuration: hidden_layers=(64, 64), anticipatory=0.5
+2025-11-30 20:09:02,832 | INFO     | Loaded game: truco
+2025-11-30 20:09:02,833 | INFO     |   Num players: 2
+2025-11-30 20:09:02,833 | INFO     |   Num actions: 46
+2025-11-30 20:09:02,880 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 20:09:26,209 | INFO     | Episode 2000/14000 | Losses: [(Array(3.2829266, dtype=float32), None), (Array(3.06276, dtype=float32), None)]
+2025-11-30 20:09:26,209 | INFO     | Evaluating at episode 2000
+2025-11-30 20:10:31,858 | INFO     | Win rate win_rate_vs_random: 26.00%
+2025-11-30 20:10:31,858 | INFO     | Win rate win_rate_vs_ismcts_100: 45.00%
+2025-11-30 20:10:31,858 | INFO     | Eval metrics: {'wins_vs_random': 13, 'win_rate_vs_random': 0.26, 'games_vs_random': 50, 'wins_vs_ismcts_100': 11, 'win_rate_vs_ismcts_100': 0.45, 'games_vs_ismcts_100': 50}
+2025-11-30 20:10:51,646 | INFO     | Episode 4000/14000 | Losses: [(Array(2.9234877, dtype=float32), None), (Array(2.979766, dtype=float32), None)]
+2025-11-30 20:10:51,646 | INFO     | Evaluating at episode 4000
+2025-11-30 20:12:13,039 | INFO     | Win rate win_rate_vs_random: 42.00%
+2025-11-30 20:12:13,039 | INFO     | Win rate win_rate_vs_ismcts_100: 39.00%
+2025-11-30 20:12:13,039 | INFO     | Eval metrics: {'wins_vs_random': 21, 'win_rate_vs_random': 0.42, 'games_vs_random': 50, 'wins_vs_ismcts_100': 8, 'win_rate_vs_ismcts_100': 0.39, 'games_vs_ismcts_100': 50}
+2025-11-30 20:12:31,035 | INFO     | Episode 6000/14000 | Losses: [(Array(2.845793, dtype=float32), None), (Array(2.7009897, dtype=float32), None)]
+2025-11-30 20:12:31,035 | INFO     | Evaluating at episode 6000
+2025-11-30 20:13:26,142 | INFO     | Win rate win_rate_vs_random: 54.00%
+2025-11-30 20:13:26,142 | INFO     | Win rate win_rate_vs_ismcts_100: 49.00%
+2025-11-30 20:13:26,143 | INFO     | Eval metrics: {'wins_vs_random': 27, 'win_rate_vs_random': 0.54, 'games_vs_random': 50, 'wins_vs_ismcts_100': 13, 'win_rate_vs_ismcts_100': 0.49, 'games_vs_ismcts_100': 50}
+2025-11-30 20:13:43,206 | INFO     | Episode 8000/14000 | Losses: [(Array(2.5919428, dtype=float32), None), (Array(2.7757032, dtype=float32), None)]
+2025-11-30 20:13:43,206 | INFO     | Evaluating at episode 8000
+2025-11-30 20:14:42,686 | INFO     | Win rate win_rate_vs_random: 56.00%
+2025-11-30 20:14:42,686 | INFO     | Win rate win_rate_vs_ismcts_100: 55.00%
+2025-11-30 20:14:42,686 | INFO     | Eval metrics: {'wins_vs_random': 28, 'win_rate_vs_random': 0.56, 'games_vs_random': 50, 'wins_vs_ismcts_100': 16, 'win_rate_vs_ismcts_100': 0.55, 'games_vs_ismcts_100': 50}
+2025-11-30 20:14:57,998 | INFO     | Episode 10000/14000 | Losses: [(Array(2.4420526, dtype=float32), None), (Array(2.5545492, dtype=float32), None)]
+2025-11-30 20:14:57,998 | INFO     | Evaluating at episode 10000
+2025-11-30 20:15:52,512 | INFO     | Win rate win_rate_vs_random: 44.00%
+2025-11-30 20:15:52,512 | INFO     | Win rate win_rate_vs_ismcts_100: 61.00%
+2025-11-30 20:15:52,512 | INFO     | Eval metrics: {'wins_vs_random': 22, 'win_rate_vs_random': 0.44, 'games_vs_random': 50, 'wins_vs_ismcts_100': 19, 'win_rate_vs_ismcts_100': 0.61, 'games_vs_ismcts_100': 50}
+2025-11-30 20:16:07,202 | INFO     | Episode 12000/14000 | Losses: [(Array(2.4069862, dtype=float32), None), (Array(2.3953366, dtype=float32), None)]
+2025-11-30 20:16:07,202 | INFO     | Evaluating at episode 12000
+2025-11-30 20:16:53,907 | INFO     | Win rate win_rate_vs_random: 56.00%
+2025-11-30 20:16:53,908 | INFO     | Win rate win_rate_vs_ismcts_100: 47.00%
+2025-11-30 20:16:53,908 | INFO     | Eval metrics: {'wins_vs_random': 28, 'win_rate_vs_random': 0.56, 'games_vs_random': 50, 'wins_vs_ismcts_100': 12, 'win_rate_vs_ismcts_100': 0.47, 'games_vs_ismcts_100': 50}
+2025-11-30 20:17:13,892 | INFO     | Episode 14000/14000 | Losses: [(Array(2.1688797, dtype=float32), None), (Array(2.2636948, dtype=float32), None)]
+2025-11-30 20:17:13,892 | INFO     | Evaluating at episode 14000
+2025-11-30 20:18:13,640 | INFO     | Win rate win_rate_vs_random: 48.00%
+2025-11-30 20:18:13,641 | INFO     | Win rate win_rate_vs_ismcts_100: 61.00%
+2025-11-30 20:18:13,641 | INFO     | Eval metrics: {'wins_vs_random': 24, 'win_rate_vs_random': 0.48, 'games_vs_random': 50, 'wins_vs_ismcts_100': 19, 'win_rate_vs_ismcts_100': 0.61, 'games_vs_ismcts_100': 50}
+2025-11-30 20:18:13,641 | INFO     | Training completed in 550.76s
+2025-11-30 20:18:13,662 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 20:18:13,663 | INFO     | Evaluation metrics for config (64, 64), 0.5:
+2025-11-30 20:18:13,664 | INFO     |   total_time: 550.7610137462616
+2025-11-30 20:18:13,664 | INFO     |   episodes: 14000
+2025-11-30 20:18:13,664 | INFO     |   final_losses: [(Array(2.1688797, dtype=float32), None), (Array(2.2636948, dtype=float32), None)]
+2025-11-30 20:18:13,665 | INFO     | Testing configuration: hidden_layers=(64, 64), anticipatory=0.9
+2025-11-30 20:18:13,667 | INFO     | Loaded game: truco
+2025-11-30 20:18:13,667 | INFO     |   Num players: 2
+2025-11-30 20:18:13,667 | INFO     |   Num actions: 46
+2025-11-30 20:18:13,698 | INFO     | Starting NFSP training for 14000 episodes
+2025-11-30 20:18:30,537 | INFO     | Episode 2000/14000 | Losses: [(Array(3.2918959, dtype=float32), None), (Array(3.2244105, dtype=float32), None)]
+2025-11-30 20:18:30,537 | INFO     | Evaluating at episode 2000
+2025-11-30 20:19:57,597 | INFO     | Win rate win_rate_vs_random: 42.00%
+2025-11-30 20:19:57,597 | INFO     | Win rate win_rate_vs_ismcts_100: 41.00%
+2025-11-30 20:19:57,597 | INFO     | Eval metrics: {'wins_vs_random': 21, 'win_rate_vs_random': 0.42, 'games_vs_random': 50, 'wins_vs_ismcts_100': 9, 'win_rate_vs_ismcts_100': 0.41000000000000003, 'games_vs_ismcts_100': 50}
+2025-11-30 20:20:15,459 | INFO     | Episode 4000/14000 | Losses: [(Array(2.9284346, dtype=float32), None), (Array(3.0834198, dtype=float32), None)]
+2025-11-30 20:20:15,459 | INFO     | Evaluating at episode 4000
+2025-11-30 20:21:19,644 | INFO     | Win rate win_rate_vs_random: 44.00%
+2025-11-30 20:21:19,644 | INFO     | Win rate win_rate_vs_ismcts_100: 47.00%
+2025-11-30 20:21:19,645 | INFO     | Eval metrics: {'wins_vs_random': 22, 'win_rate_vs_random': 0.44, 'games_vs_random': 50, 'wins_vs_ismcts_100': 12, 'win_rate_vs_ismcts_100': 0.47, 'games_vs_ismcts_100': 50}
+2025-11-30 20:21:39,630 | INFO     | Episode 6000/14000 | Losses: [(Array(2.7212462, dtype=float32), None), (Array(2.7394915, dtype=float32), None)]
+2025-11-30 20:21:39,630 | INFO     | Evaluating at episode 6000
+2025-11-30 20:22:58,717 | INFO     | Win rate win_rate_vs_random: 44.00%
+2025-11-30 20:22:58,717 | INFO     | Win rate win_rate_vs_ismcts_100: 53.00%
+2025-11-30 20:22:58,717 | INFO     | Eval metrics: {'wins_vs_random': 22, 'win_rate_vs_random': 0.44, 'games_vs_random': 50, 'wins_vs_ismcts_100': 15, 'win_rate_vs_ismcts_100': 0.53, 'games_vs_ismcts_100': 50}
+2025-11-30 20:23:18,124 | INFO     | Episode 8000/14000 | Losses: [(Array(2.7703028, dtype=float32), None), (Array(2.929735, dtype=float32), None)]
+2025-11-30 20:23:18,124 | INFO     | Evaluating at episode 8000
+2025-11-30 20:24:26,415 | INFO     | Win rate win_rate_vs_random: 50.00%
+2025-11-30 20:24:26,415 | INFO     | Win rate win_rate_vs_ismcts_100: 39.00%
+2025-11-30 20:24:26,415 | INFO     | Eval metrics: {'wins_vs_random': 25, 'win_rate_vs_random': 0.5, 'games_vs_random': 50, 'wins_vs_ismcts_100': 8, 'win_rate_vs_ismcts_100': 0.39, 'games_vs_ismcts_100': 50}
+2025-11-30 20:24:46,688 | INFO     | Episode 10000/14000 | Losses: [(Array(2.4293482, dtype=float32), None), (Array(2.855238, dtype=float32), None)]
+2025-11-30 20:24:46,688 | INFO     | Evaluating at episode 10000
+2025-11-30 20:25:45,687 | INFO     | Win rate win_rate_vs_random: 58.00%
+2025-11-30 20:25:45,688 | INFO     | Win rate win_rate_vs_ismcts_100: 57.00%
+2025-11-30 20:25:45,688 | INFO     | Eval metrics: {'wins_vs_random': 29, 'win_rate_vs_random': 0.58, 'games_vs_random': 50, 'wins_vs_ismcts_100': 17, 'win_rate_vs_ismcts_100': 0.5700000000000001, 'games_vs_ismcts_100': 50}
+2025-11-30 20:26:04,049 | INFO     | Episode 12000/14000 | Losses: [(Array(2.563202, dtype=float32), None), (Array(2.6527548, dtype=float32), None)]
+2025-11-30 20:26:04,049 | INFO     | Evaluating at episode 12000
+2025-11-30 20:26:55,216 | INFO     | Win rate win_rate_vs_random: 48.00%
+2025-11-30 20:26:55,217 | INFO     | Win rate win_rate_vs_ismcts_100: 47.00%
+2025-11-30 20:26:55,217 | INFO     | Eval metrics: {'wins_vs_random': 24, 'win_rate_vs_random': 0.48, 'games_vs_random': 50, 'wins_vs_ismcts_100': 12, 'win_rate_vs_ismcts_100': 0.47, 'games_vs_ismcts_100': 50}
+2025-11-30 20:27:13,487 | INFO     | Episode 14000/14000 | Losses: [(Array(2.414187, dtype=float32), None), (Array(2.2573254, dtype=float32), None)]
+2025-11-30 20:27:13,488 | INFO     | Evaluating at episode 14000
+2025-11-30 20:28:00,772 | INFO     | Win rate win_rate_vs_random: 50.00%
+2025-11-30 20:28:00,772 | INFO     | Win rate win_rate_vs_ismcts_100: 43.00%
+2025-11-30 20:28:00,772 | INFO     | Eval metrics: {'wins_vs_random': 25, 'win_rate_vs_random': 0.5, 'games_vs_random': 50, 'wins_vs_ismcts_100': 10, 'win_rate_vs_ismcts_100': 0.43000000000000005, 'games_vs_ismcts_100': 50}
+2025-11-30 20:28:00,772 | INFO     | Training completed in 587.07s
+2025-11-30 20:28:00,777 | INFO     | Saved checkpoint to checkpoints/nfsp/final.pkl
+2025-11-30 20:28:00,778 | INFO     | Evaluation metrics for config (64, 64), 0.9:
+2025-11-30 20:28:00,778 | INFO     |   total_time: 587.0742652416229
+2025-11-30 20:28:00,778 | INFO     |   episodes: 14000
+2025-11-30 20:28:00,779 | INFO     |   final_losses: [(Array(2.414187, dtype=float32), None), (Array(2.2573254, dtype=float32), None)]
+2025-11-30 20:28:00,780 | INFO     | ============================================================
+2025-11-30 20:28:00,780 | INFO     | Grid Search Complete!
+2025-11-30 20:28:00,780 | INFO     | Best configuration: hidden_layers=(16, 16), anticipatory=0.9
+2025-11-30 20:28:00,781 | INFO     | Best metrics: {'total_time': 393.8372731208801, 'episodes': 14000, 'final_losses': [(Array(2.352789, dtype=float32), None), (Array(2.1806948, dtype=float32), None)]}
+2025-11-30 20:28:00,782 | INFO     | ============================================================

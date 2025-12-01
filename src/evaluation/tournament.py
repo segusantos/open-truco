@@ -299,9 +299,12 @@ def create_evaluation_callback(
         metrics: Dict[str, Any],
     ) -> Dict[str, Any]:
         """Evaluation callback."""
+        print("Debug: eval_callback started")
+        print("Debug: baseline_policies", list(baseline_policies))
         eval_metrics = {}
         
         for baseline_name, baseline_policy in baseline_policies.items():
+            print(f"Debug: Evaluating against baseline {baseline_name}")
             stats = head_to_head(
                 game=game,
                 policy_a=trained_policy,
@@ -312,10 +315,11 @@ def create_evaluation_callback(
                 seed=iteration,
                 verbose=False,
             )
-            
+            print(f"Debug: stats={stats}")
+            eval_metrics[f"wins_vs_{baseline_name}"] = stats.wins_a
             eval_metrics[f"win_rate_vs_{baseline_name}"] = stats.win_rate_a
             eval_metrics[f"games_vs_{baseline_name}"] = num_eval_games
-        
+        print(f"Debug: eval_metrics={eval_metrics}")
         return eval_metrics
     
     return eval_callback

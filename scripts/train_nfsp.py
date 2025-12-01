@@ -30,13 +30,8 @@ from src.evaluation.tournament import create_evaluation_callback
 from src.utils.logging import setup_logger
 
 
-if not logging.getLogger().hasHandlers():
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-    )
-logger = logging.getLogger("nfsp")
+# Set up logging
+logger = setup_logger("nfsp")
 
 
 def parse_args():
@@ -56,6 +51,7 @@ def parse_args():
     parser.add_argument("--hidden-size", type=int, help="Hidden layer size")
     parser.add_argument("--anticipatory", type=float, help="Anticipatory parameter")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--eval-every", type=int, help="Frequency of evaluation during training")
     
     # Output options
     parser.add_argument(
@@ -74,10 +70,7 @@ def main():
     args = parse_args()
     
     # Set up logging
-    logger = setup_logger(
-        name="nfsp",
-        log_file=args.checkpoint_dir / "training.log",
-    )
+    logger = setup_logger("nfsp")
     
     logger.info("=" * 60)
     logger.info("NFSP Training for Truco")
@@ -102,6 +95,8 @@ def main():
         config.anticipatory_param = args.anticipatory
     config.seed = args.seed
     config.checkpoint_dir = args.checkpoint_dir
+    if args.eval_every:
+        config.eval_every = args.eval_every
     
     # Log configuration
     logger.info(f"Configuration: {args.config}")

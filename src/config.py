@@ -90,15 +90,15 @@ class NFSPConfig:
     game_name: str = "truco"
     
     # Training episodes
-    num_train_episodes: int = int(3e6)
-    eval_every: int = 10000
+    num_train_episodes: int = 10000
+    eval_every: int = 2000
     
     # Network architecture
-    hidden_layers_sizes: Tuple[int, ...] = (256, 256)
+    hidden_layers_sizes: Tuple[int, ...] = (128, 128)
     
     # Buffer sizes
-    replay_buffer_capacity: int = int(2e5)
-    reservoir_buffer_capacity: int = int(2e6)
+    replay_buffer_capacity: int = 100
+    reservoir_buffer_capacity: int = 1000
     
     # NFSP-specific
     anticipatory_param: float = 0.1  # Probability of using RL policy
@@ -236,8 +236,12 @@ def get_local_config() -> dict:
             advantage_network_layers=(128, 128),
         ),
         "nfsp": NFSPConfig(
-            num_train_episodes=int(1e6),
+            num_train_episodes=int(10000),
             hidden_layers_sizes=(128, 128),
+            replay_buffer_capacity=int(1e2),
+            reservoir_buffer_capacity=int(1e3),
+            eval_every=2000,
+
         ),
         "ppo": PPOConfig(
             total_timesteps=int(5e5),

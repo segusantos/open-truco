@@ -11,44 +11,29 @@ import json
 def setup_logger(
     name: str = "truco",
     level: int = logging.INFO,
-    log_file: Optional[Path] = None,
-    console: bool = True,
 ) -> logging.Logger:
-    """Set up a logger with file and/or console handlers.
+    """Set up a simple logger for console output.
     
     Args:
         name: Logger name.
         level: Logging level.
-        log_file: Optional file path for log output.
-        console: Whether to log to console.
         
     Returns:
         Configured logger.
     """
     logger = logging.getLogger(name)
     logger.setLevel(level)
-    
+
     # Clear existing handlers
     logger.handlers.clear()
-    
-    formatter = logging.Formatter(
-        "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-    )
-    
-    if console:
-        console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(level)
-        console_handler.setFormatter(formatter)
-        logger.addHandler(console_handler)
-    
-    if log_file:
-        log_file.parent.mkdir(parents=True, exist_ok=True)
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setLevel(level)
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-    
+
+    # Console handler
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(level)
+    formatter = logging.Formatter("%(asctime)s | %(levelname)-8s | %(message)s")
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
+
     return logger
 
 

@@ -7,7 +7,6 @@ checkpointing, evaluation, and logging for Truco experiments.
 import time
 from pathlib import Path
 from typing import Optional, Callable, Dict, Any, List, Tuple
-import logging
 import pickle
 
 import numpy as np
@@ -18,9 +17,11 @@ from open_spiel.python import rl_environment
 from open_spiel.python.jax import nfsp
 
 from src.config import NFSPConfig
+from src.utils.logging import setup_logger
 
 
-logger = logging.getLogger(__name__)
+# Set up logging
+logger = setup_logger(__name__)
 
 
 class NFSPPolicies(policy.Policy):
@@ -142,7 +143,6 @@ class NFSPTrainer:
         losses_history = []
         
         for episode in range(1, self.config.num_train_episodes + 1):
-            print("Episode:", episode)
             self.episode = episode
             
             # Run one episode
@@ -169,19 +169,23 @@ class NFSPTrainer:
             
             # Evaluate
             if episode % self.config.eval_every == 0:
+                logger.info(f"Evaluating at episode {episode}")  # Log evaluation event
                 avg_policy = self._get_average_policy()
-                
+
                 metrics = {
                     "episode": episode,
                     "losses": [agent.loss for agent in self.agents],
                 }
-                
+
                 if self.eval_callback:
                     eval_metrics = self.eval_callback(episode, avg_policy, metrics)
                     if eval_metrics:
+                        for baseline, win_rate in eval_metrics.items():
+                            if "win_rate" in baseline:
+                                logger.info(f"Win rate {baseline}: {win_rate:.2%}")
                         logger.info(f"Eval metrics: {eval_metrics}")
                         metrics.update(eval_metrics)
-                
+
                 self.metrics_history.append(metrics)
             
             # Checkpoint
