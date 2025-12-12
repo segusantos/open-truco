@@ -2,9 +2,13 @@
 \usepackage[a4paper, margin=2cm, columnsep=1cm]{geometry}
 
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage[spanish]{babel}
 \usepackage{hyperref}
+\usepackage{svg}
+\usepackage{fancyhdr}
 \usepackage[absolute, overlay]{textpos}
+\usepackage{stfloats}  % Permite figure* en la parte inferior de la página
 
 \usepackage[sc]{mathpazo}
 \usepackage{helvet}
@@ -12,21 +16,19 @@
 \allsectionsfont{\sffamily}
 
 \usepackage[
+    style=ieee,
     backend=biber,
-    style=apa,
-    sorting=nyt,
     language=spanish
 ]{biblatex}
-\DeclareLanguageMapping{spanish}{spanish-apa}
 \addbibresource{paper.bib}
 
 \title{
-    \large I404 Aprendizaje Reforzado\\[0.3em]
-    \sffamily\huge\textbf{OpenTruco: PPO, Deep CFR, NFSP\\para Truco Argentino}\\[0.3em]
-    \rmfamily\large\textit{Proyecto Final}
+    \large I404 Aprendizaje Reforzado --- Primavera de 2025\\[0.3em]
+    \sffamily\huge\textbf{OpenTruco: Deep RL en el Truco Argentino}\\[0.3em]
+    \rmfamily\large\textit{Entorno de OpenSpiel para el aprendizaje de estrategias con información imperfecta}
 }
 \author{
-    Marcos Piotto \\
+    Marcos Piotto \\    
     \href{mailto:mpiotto@udesa.edu.ar}{mpiotto@udesa.edu.ar}
     \and
     Segundo Santos Torrado \\
@@ -35,232 +37,331 @@
     Lucas Vitali \\
     \href{mailto:lvitali@udesa.edu.ar}{lvitali@udesa.edu.ar}
 }
-\date{Primavera de 2025}
+\date{}
 
 \begin{document}
 
-\begin{textblock*}{4cm}(\dimexpr\paperwidth-2.25cm-4cm\relax, 1.5cm)
-    \includegraphics[width=4cm]{figures/udesa.png}
+% Header with the four suit icons centered on every page
+\setlength{\headheight}{10pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{%
+    \svgpath{{figures/}}%
+    \includesvg[height=5mm]{basto}%
+    \hspace{0.4em}%
+    \includesvg[height=5mm]{copa}%
+    \hspace{0.4em}%
+    \includesvg[height=5mm]{espada}%
+    \hspace{0.4em}%
+    \includesvg[height=5mm]{oro}%
+}
+
+% Remove decorative header line and don't add a footer line
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Put page number centered in the footer
+\fancyfoot[C]{\thepage}
+
+% Ensure title page (which uses the `plain` style) shows the same header/footer
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyhead[C]{%
+        % The first argument is the vertical displacement (negative = down)
+        % The brackets { } wrap all the icons you want to move together
+        \raisebox{\dimexpr-1.275cm\relax}{% <--- ADJUST THIS VALUE to move it lower
+            \svgpath{{figures/}}%
+            \includesvg[height=8mm]{basto}%
+            \hspace{0.8em}%
+            \includesvg[height=8mm]{copa}%
+            \hspace{0.8em}%
+            \includesvg[height=8mm]{espada}%
+            \hspace{0.8em}%
+            \includesvg[height=8mm]{oro}%
+        }%
+    }%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+    \fancyfoot[C]{\thepage}%
+}
+
+\begin{textblock*}{4cm}(\dimexpr\paperwidth-2.75cm-4cm\relax, 1.5cm)
+    \includegraphics[height=8mm]{figures/udesa.png}
 \end{textblock*}
 
 \maketitle
+
+% \thispagestyle{fancy}
 \begin{abstract}
     \begin{quote}
-        La adopción de innovaciones tecnológicas es un fenómeno complejo influenciado
-        por múltiples factores sociales y estructurales. Este trabajo presenta un
-        diseño de investigación para analizar cómo el tamaño poblacional afecta la
-        velocidad, el patrón y el alcance de la adopción de innovaciones tecnológicas.
-        Se propone un estudio de campo comparativo entre localidades de distinto tamaño,
-        fundamentado en la Teoría de la Difusión de Innovaciones.
+        El Truco Argentino es un juego de naipes tradicional sudamericano con información
+        imperfecta, donde las apuestas --\textit{betting}-- y el engaño --\textit{bluffing}--
+        son componentes esenciales de su estrategia.
+
+        En este trabajo, presentamos OpenTruco, un entorno de simulación desarrollado en
+        el \textit{framework} OpenSpiel de DeepMind, que permite el entrenamiento y evaluación
+        de agentes de aprendizaje por refuerzo profundo en el Truco Argentino.
+
+        Asimismo, evaluamos el desempeño de algoritmos de \textit{reinforcement learning}
+        y enfoques basados en \textit{regret minimization}, analizando su capacidad para aprender
+        estrategias óptimas en un contexto adversarial bajo incertidumbre.
     \end{quote}
+
+    \sffamily\textbf{Palabras clave:} \rmfamily{Truco Argentino, OpenSpiel.}
 \end{abstract}
-
-\section{Introducción}
-
-El presente trabajo tiene como objetivo diseñar un proyecto de investigación
-para analizar la influencia del tamaño poblacional en la adopción de tecnologías.
-Se busca comprender cómo las dinámicas sociales en diferentes contextos urbanos
-afectan la difusión de innovaciones.
-
-En primer lugar, se plantean los objetivos generales y particulares del estudio,
-seguido de la hipótesis principal y sus posibles contrastaciones. A continuación,
-se detalla la metodología propuesta, incluyendo el tipo de experimento,
-variables, métodos de medición y consideraciones sobre su validez. Subsecuentemente,
-se presenta el estado del arte que fundamenta el proyecto, junto con las
-consideraciones éticas relacionadas a la investigación propuesta. Por último,
-se describe la utilización de herramientas de inteligencia artificial durante la
-elaboración del trabajo y se explicitan las referencias bibliográficas utilizadas.
 
 \section{Objetivos}
 
-En cuanto a los objetivos del proyecto, se distinguen dos niveles: los generales,
-que abordan la meta amplia del estudio, y los particulares, que especifican
-aspectos concretos a lograr.
+El objetivo principal de este proyecto es el desarrollo y la publicación de OpenTruco\footnote{Repositorio de OpenTruco: \url{https://github.com/segusantos/open-truco}}, un entorno de aprendizaje por refuerzo para el juego de naipes Truco Argentino. Este \textit{environment} fue diseñado para ser compatible con el \textit{framework} OpenSpiel \cite{lanctot2020openspielframeworkreinforcementlearning}, la librería de referencia desarrollada por DeepMind para la investigación en \textit{reinforcement learning} y algoritmos de búsqueda y planificación en juegos.
 
-\subsection*{Objetivos generales}
+A través de esta implementación, se busca aportar un modelo computacional eficiente y estandarizado de un juego de suma cero e información imperfecta. Si bien el Truco comparte dinámicas centrales con el Póker —como las apuestas o \textit{betting}, y la mecánica del engaño o \textit{bluffing}—, posee particularidades estratégicas y una relevancia cultural que lo convierten en un dominio de prueba desafiante para el desarrollo de agentes inteligentes.
 
-Entre los objetivos generales del proyecto se identifican los siguientes:
+Adicionalmente, este trabajo tiene como fin validar la robustez del entorno propuesto mediante el desarrollo de agentes basados en aprendizaje reforzado profundo, así como \textit{regret minimization}, comparando sus desempeños con estrategias \textit{baseline} aleatorias y basadas en búsqueda. De este modo, se pretende demostrar la utilidad de OpenTruco como plataforma para la experimentación en \textit{reinforcement learning} en juegos adversariales con información imperfecta.
 
-\begin{itemize}
-    \item Analizar el impacto del tamaño poblacional en la adopción tecnológica,
-          esto es, la relación entre la demografía de una urbe y la difusión de
-          innovaciones en ella.
-    \item Proponer recomendaciones basadas en evidencia a compañías privadas y
-          organizaciones gubernamentales para orientar estrategias de
-          introducción tecnológica.
-\end{itemize}
+\section{Introducción}
 
-\subsection*{Objetivos particulares}
-
-Respecto a los objetivos particulares, se plantean los siguientes:
-
-\begin{itemize}
-    \item Medir la velocidad inicial y cobertura final de difusión de innovaciones en
-          poblaciones de distintos tamaños. Con este fin, se busca cuantificar la adopción
-          de tecnologías en localidades pequeñas, medianas y grandes a corto y largo plazo.
-    \item Evaluar la efectividad de la introducción de incentivos para la adopción de
-          tecnologías innovadoras, es decir, analizar si la intervención con incentivos
-          es efectiva y si tiene un impacto diferencial según el tamaño poblacional.
-\end{itemize}
-
-\section{Hipótesis}
-
-El tamaño poblacional influye en la difusión de innovaciones tecnológicas: en ciudades grandes
-la adopción inicial es gradual y el alcance a usuarios final es alto, mientras que en ciudades
-pequeñas la velocidad de difusión al principio es alta, pero la cobertura total es más limitada
-(véase Figura \ref{fig:adoption_curves}).
+En esta sección se presentan los fundamentos teóricos y metodológicos que sustentan el desarrollo de OpenTruco. Primero, se describen las reglas de la variante de Truco Argentino seleccionada para la implementación. Posteriormente, se ofrece una caracterización formal del juego desde la perspectiva de la Teoría de Juegos Algorítmica, justificando la elección del \textit{framework} OpenSpiel. Finalmente, se realiza un análisis exhaustivo de los paradigmas algorítmicos aplicables al desarrollo de agentes inteligentes en juegos de información imperfecta, presentando los métodos disponibles en OpenSpiel que resultan pertinentes para este dominio.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/adoption_curves.pdf}
-    \caption{Curvas de adopción esperadas según el tamaño poblacional. Se observa una adopción
-        inicial más rápida en pueblos debido a sus redes sociales densas, pero con un techo más
-        bajo. Las metrópolis muestran un crecimiento más lento pero sostenido, con una mayor
-        cobertura final.}
-    \label{fig:adoption_curves}
+    % Asegúrate de tener el archivo o comenta la línea si no está listo
+    \includegraphics[width=0.45\textwidth]{figures/cards.pdf}
+    \caption{Jerarquía de valores de las cartas para el Truco. Cada naipe pierde contra los de su izquierda, empata con los del mismo nivel y gana contra los de su derecha.}
+    \label{fig:cartas_truco}
 \end{figure}
 
-A continuación, se presentan dos posibles formas de contrastar la hipótesis propuesta.
+\subsection{Reglas del Truco Argentino}
 
-\subsection*{Primera contrastación posible}
+Las reglas seleccionadas para el desarrollo de OpenTruco se basan en el reglamento oficial publicado por la Asociación Argentina de Truco \cite{asart_reglamento_archived}. En particular, se implementó la lógica correspondiente a la modalidad de Truco 1 vs. 1 sin Flor a 30 puntos. Esto define una partida entre dos jugadores individuales, excluyendo la mecánica de azar de la "Flor", con una puntuación objetivo de 30 puntos para ganar el juego. La partida se divide en dos etapas de puntuación: las "malas" (primeros 15 puntos) y las "buenas" (puntos restantes).
 
-Se seleccionan varias localidades de distinto tamaño, clasificadas en tres categorías:
-``pueblo'' (menos de 50.000 habitantes), ``ciudad'' (entre 50.000 y 1.000.000 de habitantes)
-y ``metrópoli'' (más de 1.000.000 de habitantes). Dentro de cada segmento, se recluta un
-conjunto de personas con características comparables y se las asigna a tratamiento o control.
+El juego utiliza una baraja española de 40 naipes (sin ochos, nueves ni comodines). La partida se estructura en "manos", donde cada jugador recibe tres cartas. El objetivo de cada mano es ganar al menos dos de las tres rondas, o la primera en caso de empates sucesivos.
 
-La intervención consiste en ofrecer un paquete idéntico durante tres meses:
-\begin{itemize}
-    \item Acceso guiado y gratuito a una tecnología digital de acceso universal (una billetera virtual o un asistente de IA, por ejemplo).
-    \item Material informativo y soporte técnico para el uso de la aplicación.
-    \item Incentivos menores (descuentos, créditos de uso) para realizar las primeras interacciones.
-\end{itemize}
+La dinámica estratégica se rige por dos flujos de apuestas independientes:
+\begin{enumerate}
+    \item \textbf{Truco:} Apuesta sobre el resultado de las rondas. Es escalable (Truco, Retruco, Vale Cuatro) y permite aumentar el valor de la mano en juego. Puede realizarse en cualquier momento del turno del jugador.
+    \item \textbf{Envido:} Apuesta sobre el valor numérico de la combinación de cartas de un mismo palo. Se resuelve antes de finalizar la primera mano y añade una capa de decisión temprana basada en su evaluación.
+\end{enumerate}
 
-El grupo de control no recibe el paquete durante el mismo período. Medimos tasa de adopción (registro, uso efectivo), intensidad de uso y
-retención a 1, 3, 6 y 12 meses.
+\subsection{Teoría de Juegos Algorítmica}
 
-Luego, la predicción observacional de esta contrastación es que, tras la intervención, la diferencia de adopción tratamiento vs. control
-será mayor en las ciudades grandes que en las pequeñas.
-
-\subsection*{Segunda contrastación posible}
-
-Se lleva a acabo un análisis estadístico de las tasas de adopción de una tecnología digital (una \textit{wallet} o ChatGPT)
-en localidades de distintos tamaños: ``pueblo'', ``ciudad'' y ``metrópoli''.
-
-En este caso, la predicción observacional es que los pueblos mostrarán adopción rápida dentro de ciertos grupos al inicio, mientras que
-las metrópolis presentarán adopción más escalonada, pero con mayor penetración final.
-
-\subsection*{Supuestos auxiliares}
-
-A su vez, para la elaboración de la hipótesis, se consideraron los supuestos auxiliares que se
-describen a continuación.
-
-En primer lugar, se asume que hay \textbf{estabilidad en la oferta tecnológica}, esto es, que la
-disponibilidad y calidad del servicio tecnológico se mantiene constante en todas las localidades
-durante el estudio. Este supuesto es razonable dado que las aplicaciones digitales suelen tener
-despliegue nacional uniforme, y es necesario para atribuir las diferencias de adopción al
-tamaño poblacional y no a fallas de servicio.
-
-En segundo lugar, se asume la \textbf{ausencia de distorsiones externas}, es decir, que no habrá
-campañas masivas concurrentes ni políticas locales extraordinarias que incentiven o bloqueen
-la tecnología en las localidades seleccionadas. Esto se justifica por la necesidad de aislamiento
-causal y se controlará mediante el monitoreo de noticias locales.
-
-\section{Metodología}
-
-En esta sección, se detalla el diseño metodológico propuesto para contrastar la hipótesis planteada
-utilizando la primera forma de contrastación descripta anteriormente.
-
-En cuanto al tipo de experimento, se opta por un estudio de campo que permita captar la influencia del
-tamaño poblacional y la densidad social en la difusión de innovaciones.
-
-Respecto a la intervención o procedimiento, se comparará la adopción tecnológica en localidades de distinto
-tamaño: ``pueblo'' ($<50$k), ``ciudad'' ($50$k$-1$M) y ``metrópoli'' ($>1$M). Dentro de cada tipo de localidad
-se reclutarán grupos equivalentes de personas con características comparables (edad, nivel educativo, acceso
-a internet, ingresos, etc.). A la mitad de los participantes se les asignará el tratamiento, que incluye acceso
-gratuito y guiado a una tecnología digital, material informativo y soporte técnico, así como pequeños incentivos
-(descuentos o créditos) para fomentar el uso inicial.
-
-El grupo de control no recibirá el paquete durante el mismo período. La intervención durará tres meses, tras lo
-cual se medirán los niveles de adopción (registro, uso efectivo y retención) en 1, 3, 6 y 12 meses posteriores.
-
-\subsection*{Variables}
-
-Respecto a las variables consideradas en el experimento, se definen las siguientes:
-\begin{itemize}
-    \item \textbf{Variable independiente principal:} Tamaño poblacional de la localidad (pueblo, ciudad, metrópoli).
-    \item \textbf{Variable dependiente principal:} Tasa de adopción tecnológica (porcentaje de participantes que registran, usan y mantienen el uso de la tecnología).
-    \item \textbf{Variables dependientes adicionales:} Intensidad y frecuencia de uso, retención a largo plazo.
-\end{itemize}
-
-\subsection*{Método de detección o medición}
-
-Los datos se recolectarán mediante tres fuentes complementarias:
-\begin{itemize}
-    \item Registros de uso digital (logs de cada aplicación tecnológica y estadísticas de uso del dispositivo segmentado por \textit{app}), que permiten medir adopción, frecuencia y continuidad.
-    \item Encuestas estructuradas antes y después de la intervención, para captar percepciones, barreras y motivaciones.
-    \item Observaciones complementarias o entrevistas breves en muestras reducidas, para contextualizar los resultados cuantitativos.
-\end{itemize}
-Las mediciones se harán con intervalos definidos (\textit{pretest}, \textit{postest} y seguimiento) para evaluar tanto el efecto inmediato como la persistencia en el tiempo.
-
-\subsection*{Variables extrañas}
-
-Se identifican las siguientes variables extrañas que podrían interferir con la relación causal entre el tamaño poblacional y la adopción tecnológica:
+Desde una perspectiva formal, el Truco Argentino se modela como un juego extensivo de dos jugadores, de suma cero e información imperfecta \cite{shoham2008multiagent}. Esta clasificación determina las propiedades fundamentales del dominio y orienta la selección de algoritmos apropiados.
 
 \begin{itemize}
-    \item \textbf{Acceso diferencial a internet o dispositivos:} puede interferir porque las localidades pequeñas pueden tener menor conectividad, afectando la adopción independientemente de la intervención. Para su control se seleccionarán participantes con acceso asegurado o se proveerán dispositivos/bonos de conectividad equivalentes.
-    \item \textbf{Interés o experiencia previa en tecnología:} puede interferir porque los participantes con mayor familiaridad pueden adoptar más rápido sin importar el tamaño poblacional. Para su control se medirá el nivel inicial de experiencia y se equilibrará entre grupos mediante emparejamiento o aleatorización.
-    \item \textbf{Efectos de difusión cruzada:} puede interferir porque los del grupo de control podrían enterarse de la intervención y modificar su comportamiento. Para su control se seleccionará geográficamente a los participantes para reducir la interacción entre distintos grupos dentro de la misma localidad.
+    \item \textbf{Juego extensivo:} El Truco se desarrolla en forma secuencial, donde los jugadores alternan turnos y las decisiones se toman en función del historial de acciones observables. Esta estructura se representa naturalmente mediante un árbol de juego.
+    
+    \item \textbf{Suma cero:} La estructura de recompensas es estrictamente competitiva; la utilidad obtenida por un agente ($u_i$) es exactamente la inversa de la de su oponente ($u_{-i}$), tal que $\sum u = 0$. En este contexto, el concepto de solución adecuado es el Equilibrio de Nash \cite{nash1950equilibrium}, donde ningún jugador puede mejorar unilateralmente su utilidad esperada.
+    
+    \item \textbf{Información imperfecta:} A diferencia de juegos como el Ajedrez o el Go, los jugadores no poseen conocimiento completo del estado global: las cartas del oponente permanecen ocultas. Esto obliga a los agentes a operar sobre conjuntos de información (\textit{information sets}), agrupando estados del juego que son indistinguibles desde la perspectiva del jugador.
+    
+    \item \textbf{Estocasticidad y engaño:} El reparto aleatorio de cartas introduce incertidumbre en el nodo raíz de cada mano. Además, las mecánicas de apuesta habilitan el \textit{bluffing} (engaño), donde un agente puede realizar acciones agresivas con una mano débil para inducir al oponente a retirarse.
 \end{itemize}
 
-\subsection*{Validez del diseño}
+Esta caracterización motiva la elección de OpenSpiel \cite{lanctot2020openspielframeworkreinforcementlearning} como \textit{framework} de desarrollo. OpenSpiel provee las abstracciones necesarias para representar juegos extensivos con información imperfecta, incluyendo soporte nativo para conjuntos de información, nodos de azar, y una amplia biblioteca de algoritmos de aprendizaje y búsqueda específicamente diseñados para estos dominios.
 
-A continuación, se analiza la validez interna y externa del diseño propuesto.
+\subsection{Paradigmas Algorítmicos para Juegos de Información Imperfecta}
 
-\textbf{Validez interna:} El uso de grupos de control y la asignación aleatoria dentro de cada localidad permiten atribuir los cambios observados a la intervención y al tamaño poblacional. Los supuestos auxiliares (comparabilidad inicial, homogeneidad del tratamiento y estabilidad del contexto) refuerzan la inferencia causal. Sin embargo, la validez interna puede verse limitada por la posible interacción entre grupos o por diferencias contextuales no controladas.
+El desarrollo de agentes inteligentes en juegos de información imperfecta puede ser abarcado desde paradigmas algorítmicos específicos que difieren fundamentalmente de los métodos diseñados para información perfecta. A continuación, se presenta una taxonomía de los enfoques aplicables al Truco, clasificados según su fundamento teórico.
 
-\textbf{Validez externa:} Al realizar el estudio en distintas localidades reales, los resultados pueden generalizarse razonablemente a otros contextos urbanos y rurales. No obstante, la extrapolación a países o culturas con distinta infraestructura tecnológica debe hacerse con precaución.
+\subsubsection{Métodos de Búsqueda}
 
-\subsection*{Cánones de inferencia causal}
-Se aplicará el canon de la variación concomitante, observando cómo varía la tasa de adopción en función del tamaño poblacional. Este método es el apropiado ya que cuando dos variables varían juntas, hay relación causal posible. Es decir, a medida que aumenta la variable independiente (tamaño poblacional), también aumenta la variable dependiente (la difusión de innovaciones tecnológicas).
+\paragraph{IS-MCTS.} \textit{Information Set Monte Carlo Tree Search} \cite{kocsis2006bandit} adapta el algoritmo MCTS clásico para juegos de información imperfecta. A diferencia de MCTS estándar, IS-MCTS opera sobre conjuntos de información en lugar de estados concretos, y utiliza técnicas de \textit{determinization} (muestreo de estados consistentes con la observación actual) para guiar la búsqueda. OpenSpiel incluye una implementación de IS-MCTS que resulta útil como \textit{baseline} para evaluar agentes entrenados.
 
-\section{Estado del arte}
+\subsubsection{Minimización de Arrepentimiento Contrafactual}
 
-El estudio de la adopción tecnológica cuenta con una amplios antecedentes en la literatura académica. \textcite{Rogers1962} estableció las bases con su Teoría de la Difusión de Innovaciones, describiendo la adopción como un proceso social comunicado a través de canales específicos en el tiempo. Desde una perspectiva sociológica, Rogers sugiere que en ciudades pequeñas las redes son densas y presentan alta homofilia, lo que facilita una difusión rápida pero localizada. En contraste, en ciudades grandes las redes son más dispersas y heterofílicas, lo que podría ralentizar la adopción inicial pero permitir un alcance más amplio a largo plazo.
+Los algoritmos basados en \textit{Counterfactual Regret Minimization} (CFR) constituyen el paradigma dominante para aproximar equilibrios de Nash en juegos extensivos de información imperfecta. A diferencia del aprendizaje por refuerzo clásico, estos métodos minimizan el arrepentimiento contrafactual: la diferencia entre la utilidad obtenida y la que se habría obtenido al tomar acciones alternativas.
 
-Complementariamente, \textcite{Hagerstrand1967} introdujo la dimensión espacial, sugiriendo que la difusión ocurre como un proceso de contagio por cercanía. Según su enfoque, las ciudades pequeñas pueden experimentar aislamiento espacial donde predomina el ``efecto vecindad'', mientras que las grandes urbes actúan como nodos centrales en una difusión jerárquica.
+\paragraph{CFR.} \textit{Counterfactual Regret Minimization} \cite{zinkevich2007regret} fue el primer algoritmo en demostrar convergencia al equilibrio de Nash en juegos extensivos de información imperfecta. El método mantiene contadores de arrepentimiento acumulado para cada acción en cada conjunto de información, y actualiza la estrategia proporcionalmente a los arrepentimientos positivos. CFR requiere recorrer el árbol de juego completo en cada iteración, lo cual resulta prohibitivo para juegos de gran escala. OpenSpiel incluye una implementación tabular de CFR.
 
-Adicionalmente, modelos más recientes como el de \textcite{young2006innovation} proponen que las personas adoptan tecnologías cuando una proporción suficiente de su entorno ya lo ha hecho, reforzando la importancia de la densidad de las interacciones locales.
+\paragraph{MCCFR.} \textit{Monte Carlo CFR} \cite{lanctot2009monte} extiende CFR mediante técnicas de muestreo que evitan la enumeración exhaustiva del árbol. Las variantes principales incluyen \textit{external sampling} (muestrea las acciones del oponente y los nodos de azar) y \textit{outcome sampling} (muestrea una trayectoria completa del juego). Ambas variantes preservan las garantías de convergencia de CFR con alta probabilidad, pero reducen drásticamente el costo computacional por iteración. OpenSpiel proporciona implementaciones verificadas de ambas variantes.
 
-A pesar de estos avances, existe un debate sobre cómo la densidad urbana moderna altera estos patrones clásicos. Este proyecto se diferencia al contrastar empíricamente estas teorías en el contexto actual de tecnologías digitales, donde la distancia física podría tener un rol distinto al de las innovaciones tradicionales.
+\paragraph{Deep CFR.} \textit{Deep Counterfactual Regret Minimization} \cite{brown2019deep} combina el marco teórico de CFR con redes neuronales para aproximar las estrategias y los arrepentimientos acumulados. Esto elimina la necesidad de almacenar tablas explícitas de arrepentimiento, permitiendo escalar a juegos con espacios de estados intratables para métodos tabulares. Deep CFR entrena redes de ventaja (\textit{advantage networks}) que predicen los arrepentimientos contrafactuales para cada conjunto de información. El algoritmo fue validado en variantes de Póker a gran escala.
 
-\section{Consideraciones éticas}
+\subsubsection{Aprendizaje por Refuerzo con Self-Play}
 
-La evaluación ética de este proyecto se aborda desde dos perspectivas filosóficas complementarias.
+Los métodos de \textit{Deep Reinforcement Learning} pueden adaptarse a juegos de información imperfecta mediante esquemas de \textit{self-play}, donde el agente entrena compitiendo contra versiones anteriores de su propia política \cite{sutton2018reinforcement}. Si bien estos métodos no garantizan convergencia a equilibrios de Nash y pueden exhibir dinámicas cíclicas, resultan efectivos para explorar políticas diversas.
 
-Desde una \textbf{mirada deontológica (Kant)}, el diseño prioriza el deber hacia los participantes mediante:
+\paragraph{DQN.} \textit{Deep Q-Networks} \cite{mnih2015human} aproxima la función de valor-acción $Q(s, a)$ mediante una red neuronal profunda. El algoritmo emplea \textit{experience replay} y \textit{target networks} para estabilizar el entrenamiento. En juegos de información imperfecta, DQN opera sobre observaciones parciales del estado, aprendiendo a tomar decisiones bajo incertidumbre.
+
+\paragraph{PPO.} \textit{Proximal Policy Optimization} \cite{schulman2017proximal} es un algoritmo de gradiente de política que optimiza una función objetivo sustituta con restricciones sobre la magnitud de las actualizaciones. En juegos de suma cero, PPO se combina con \textit{self-play} para generar oponentes adaptativos.
+
+\subsubsection{Métodos Híbridos: Aprendizaje por Refuerzo y Teoría de Juegos}
+
+Una línea de investigación busca combinar las fortalezas del aprendizaje por refuerzo profundo con las garantías de convergencia de la teoría de juegos clásica.
+
+\paragraph{NFSP.} \textit{Neural Fictitious Self-Play} \cite{heinrich2016deep} integra el aprendizaje por refuerzo con el concepto de \textit{Fictitious Play}. El algoritmo entrena simultáneamente dos redes neuronales: una red DQN que aprende una \textit{mejor respuesta aproximada} contra la estrategia histórica promedio del oponente, y una red de aprendizaje supervisado que modela la \textit{política promedio} del propio agente a lo largo del entrenamiento. La mezcla de ambas redes, ponderada por un parámetro de anticipación $\eta$, define la política de comportamiento. NFSP demostró convergencia a estrategias aproximadamente Nash en Leduc Poker y rendimiento competitivo en Limit Texas Hold'em.
+
+Todos los algoritmos descritos se encuentran implementados en OpenSpiel, lo cual facilita la experimentación comparativa. Para la validación inicial de OpenTruco, seleccionamos NFSP por su balance entre fundamentos teóricos y eficiencia computacional.
+
+\section{Desarrollo}
+
+En esta sección se describe la implementación de OpenTruco como un entorno compatible con el \textit{framework} OpenSpiel. Se presenta el modelado formal del juego, incluyendo la representación del estado, el espacio de acciones y la estructura de recompensas. Asimismo, se discuten aspectos técnicos relevantes como el muestreo consistente desde conjuntos de información y el uso de \textit{reward shaping} basado en potencial para acelerar el entrenamiento de agentes.
+
+OpenSpiel modela los juegos como máquinas de estados finitos, donde cada estado encapsula toda la información necesaria para determinar las transiciones legales y las recompensas. Para juegos de información imperfecta, el \textit{framework} distingue entre el \textit{estado del mundo} (completo) y la \textit{observación} o \textit{estado de información} que percibe cada jugador. Esta distinción resulta fundamental para algoritmos como CFR y MCCFR, que operan sobre conjuntos de información, así como para métodos de muestreo como IS-MCTS, que requieren generar estados consistentes con las observaciones del agente.
+
+\subsection{Modelado del Entorno}
+
+El entorno OpenTruco implementa la interfaz \texttt{Game} y \texttt{State} de OpenSpiel, exponiendo las funcionalidades necesarias para el entrenamiento y evaluación de agentes. A continuación, se detalla la representación del estado, el espacio de acciones y la estructura de recompensas.
+
+\subsubsection{Espacio de Estados}
+
+El estado del juego se representa mediante un vector de características que codifica tanto la información privada del jugador (su mano) como la información pública observable (cartas jugadas, apuestas, puntuación). La representación tensorial se estructura de la siguiente manera:
+
 \begin{itemize}
-    \item \textbf{Participación voluntaria y consentimiento informado:} Se garantizará que cada sujeto comprenda plenamente el alcance del estudio antes de aceptar, asegurando su autonomía.
-    \item \textbf{Retiro sin penalidades:} Los participantes podrán abandonar el estudio en cualquier momento sin sufrir consecuencias negativas.
-    \item \textbf{Transparencia en los incentivos:} Las recompensas por participación serán claras y no coercitivas.
-    \item \textbf{Protección de datos personales:} Se aplicarán protocolos estrictos para resguardar la privacidad y el anonimato de la información recolectada.
+    \item \textbf{Jugador observador} ($n_p = 2$ bits): codificación \textit{one-hot} del jugador cuya perspectiva se representa.
+    
+    \item \textbf{Mano privada} ($n_c = 40$ bits): vector binario indicando las cartas que el jugador posee y no ha jugado.
+    
+    \item \textbf{Historial de rondas} ($3 \times 2 \times 40 = 240$ bits): para cada una de las tres rondas, se codifican las cartas jugadas por cada jugador mediante vectores \textit{one-hot}.
+    
+    \item \textbf{Análisis de rondas} ($3 \times 3 + 3 \times 2 = 15$ bits): ganadores de cada ronda (incluyendo empate) y jugador líder en cada una.
+    
+    \item \textbf{Puntuación del juego} ($2$ valores normalizados): puntos acumulados de cada jugador, normalizados por el objetivo ($30$ puntos).
+    
+    \item \textbf{Nivel de Truco} ($4$ bits): codificación \textit{one-hot} del nivel actual de apuesta (1 a 4 puntos, esto es, sin apuesta, Truco, Retruco y Vale Cuatro).
+    
+    \item \textbf{Secuencia de Envido} ($4 \times 3 = 12$ bits): hasta cuatro llamadas de Envido codificadas como \textit{one-hot} sobre los tres tipos posibles (Envido, Real Envido, Falta Envido).
+    
+    \item \textbf{Estado del Envido} ($2$ bits): indicadores de si el Envido fue resuelto y/o bloqueado.
+    
+    \item \textbf{Puntuación de Envido} ($2$ valores normalizados): valor de Envido propio (siempre visible) y del oponente (solo si fue revelado tras aceptar la apuesta).
+    
+    \item \textbf{Mano} ($2$ bits): indicador del jugador que es ``mano'' en la ronda actual.
 \end{itemize}
 
-Desde una \textbf{mirada consecuencialista (Bentham, Mill)}, se busca maximizar el bienestar general y minimizar los daños:
+La dimensión total del tensor de observación es $|\mathcal{O}| = 321$ componentes, proporcionando una representación compacta pero suficientemente expresiva del estado de información de cada jugador.
+
+\subsubsection{Espacio de Acciones}
+
+El espacio de acciones de OpenTruco es discreto y de tamaño fijo $|\mathcal{A}| = 46$, compuesto por:
+
 \begin{itemize}
-    \item \textbf{Minimización de daños:} Se proveerá soporte técnico continuo para evitar frustraciones o perjuicios por el uso de la tecnología, y se establecerán límites a los incentivos para evitar conductas de riesgo.
-    \item \textbf{Beneficio social:} El conocimiento generado permitirá optimizar políticas públicas de inclusión digital, generando un impacto positivo en la sociedad. Además, se contempla extender los beneficios (capacitación, acceso) al grupo control una vez finalizado el estudio para asegurar la equidad.
+    \item \textbf{Acciones de carta} ($40$ acciones): cada una de las 40 cartas de la baraja española corresponde a una acción. En cada estado, solo son legales las cartas que el jugador posee y no ha jugado.
+    
+    \item \textbf{Acciones de Envido} ($3$ acciones): llamar Envido, Real Envido o Falta Envido. Solo son legales durante la primera mano y si no se ha resuelto previamente.
+    
+    \item \textbf{Acción de Truco} ($1$ acción): subir la apuesta de Truco (Truco $\rightarrow$ Retruco $\rightarrow$ Vale Cuatro). Legal cuando el jugador tiene derecho a subir.
+    
+    \item \textbf{Acciones de respuesta} ($2$ acciones): aceptar o rechazar una apuesta pendiente (Envido o Truco).
 \end{itemize}
 
-Finalmente, se plantea la discusión sobre si es ético intervenir en el mercado para acelerar la adopción tecnológica. Concluimos que, al tratarse de herramientas de inclusión financiera (billeteras virtuales) o de acceso al conocimiento (IA), la intervención se justifica por su potencial para reducir brechas de desigualdad.
+La máscara de acciones legales se actualiza dinámicamente según el estado del juego, respetando las reglas de precedencia entre apuestas y las restricciones de turno.
 
-\section{Utilización de IA}
+\subsubsection{Recompensas y \textit{Reward Shaping}}
 
-Para la realización de este trabajo se utilizaron herramientas de Inteligencia Artificial Generativa.
+El objetivo fundamental del agente en OpenTruco es maximizar la probabilidad de ganar la partida. Esto implica modelar el episodio como la secuencia completa de manos desde el inicio hasta que un jugador alcanza los 30 puntos. Bajo esta formulación, las recompensas se definen de manera binaria:
+\begin{equation}
+    R_{\text{terminal}}(s) = \begin{cases}
+        +1 & \text{si el agente gana} \\
+        -1 & \text{si el agente pierde}
+    \end{cases}
+\end{equation}
 
-En primer lugar, se emplearon modelos de lenguaje para la búsqueda y síntesis de bibliografía teórica relacionada con la difusión de innovaciones, así como para la revisión de estilo y redacción.
+Esta definición garantiza que la política óptima maximice el \textit{win rate}, independientemente del margen de puntos. Sin embargo, presenta un desafío práctico significativo: la dispersión de recompensas (\textit{sparse rewards}). El agente solo recibe señal de aprendizaje al finalizar partidas que pueden extenderse por decenas de manos, dificultando la asignación de crédito (\textit{credit assignment}) a las acciones individuales.
 
-Si bien la IA facilitó el acceso rápido a marcos teóricos clásicos y la estructuración de ideas, se identificaron limitaciones en la precisión de citas específicas, lo que requirió una verificación manual.
+Una alternativa natural sería utilizar los puntos acumulados como recompensa intermedia, aprovechando que la diferencia de puntuación constituye una heurística informativa sobre el progreso del juego. No obstante, maximizar los puntos no es estrictamente equivalente a maximizar la tasa de victoria: un agente podría preferir estrategias conservadoras que aseguren puntos menores en lugar de arriesgar por victorias más decisivas.
+
+Para reconciliar ambos objetivos ---acelerar el entrenamiento con señales densas sin alterar la política óptima--- implementamos \textit{reward shaping} basado en potencial, siguiendo el marco teórico de Ng, Harada y Russell \cite{Ng1999PolicyIU}. El teorema central de este enfoque establece que, dada una función de potencial $\Phi: \mathcal{S} \rightarrow \mathbb{R}$, la transformación de recompensas:
+\begin{equation}
+    R'(s, a, s') = R(s, a, s') + \gamma \Phi(s') - \Phi(s)
+\end{equation}
+preserva la política óptima del problema original. Es decir, la política que maximiza el retorno bajo $R'$ también maximiza el retorno bajo $R$, garantizando \textit{correctitud} teórica.
+
+Para OpenTruco, definimos el potencial como la diferencia de puntuación normalizada:
+\begin{equation}
+    \Phi(s) = \frac{\text{puntos}_{\text{agente}}(s) - \text{puntos}_{\text{oponente}}(s)}{30}
+\end{equation}
+
+\noindent donde $30$ es la puntuación objetivo del juego. Este potencial toma valores en $(-1, 1)$ y satisface la condición de ser cero en estados terminales, ya que la diferencia de puntos pierde relevancia una vez finalizada la partida.
+
+La recompensa transformada proporciona señales más densas durante el entrenamiento: cada mano que incrementa la ventaja de puntuación genera una recompensa positiva proporcional, mientras que las pérdidas de puntos se penalizan inmediatamente. Crucialmente, las garantías teóricas del \textit{potential-based reward shaping} aseguran que esta heurística acelera el aprendizaje sin modificar qué política resulta óptima.
+
+La Figura \ref{fig:reward_shaping} ilustra el efecto del \textit{reward shaping} en la convergencia del entrenamiento, comparando la evolución de la pérdida con y sin la transformación de recompensas.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\columnwidth]{figures/reward_shaping.pdf}
+    \caption{Comparación de curvas de pérdida con y sin \textit{reward shaping} basado en potencial. El moldeado de recompensas acelera el aprendizaje del algoritmo NFSP.}
+    \label{fig:reward_shaping}
+\end{figure}
+
+% Declaramos la figura de ancho completo aquí para que aparezca en la página 6
+\begin{figure*}[!t]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/grouped_win_rate_curves_vs_random.pdf}
+        \caption{Tasa de victoria contra agente aleatorio durante el entrenamiento.}
+        \label{fig:winrate_random}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/grouped_win_rate_curves_vs_ismcts.pdf}
+        \caption{Tasa de victoria contra IS-MCTS (100 simulaciones).}
+        \label{fig:winrate_ismcts}
+    \end{minipage}
+\end{figure*}
+
+\subsubsection{Muestreo desde Conjuntos de Información}
+
+Varios algoritmos de OpenSpiel, incluyendo IS-MCTS y ciertas variantes de CFR, requieren la capacidad de generar estados del mundo consistentes con la observación actual del jugador. Esta funcionalidad se implementa mediante el método \texttt{ResampleFromInfostate}, que reconstruye un estado plausible redistribuyendo las cartas ocultas del oponente.
+
+La implementación presenta una complejidad particular derivada de la mecánica del Envido. Cuando el Envido es aceptado y resuelto, ambos jugadores revelan su puntuación. Este valor pasa a formar parte de la información pública y, por tanto, cualquier estado muestreado debe respetar esta restricción: las cartas asignadas al oponente deben producir exactamente la puntuación de Envido revelada.
+
+Para garantizar esta consistencia, el algoritmo de muestreo:
+\begin{enumerate}
+    \item Identifica las cartas ya jugadas por el oponente (información pública).
+    \item Enumera las combinaciones de cartas disponibles que, junto con las cartas jugadas, producen la puntuación de Envido requerida.
+    \item Selecciona uniformemente una combinación válida y la asigna a la mano del oponente.
+\end{enumerate}
+
+Este procedimiento preserva la coherencia del estado de información y permite que algoritmos basados en muestreo operen correctamente en presencia de información revelada condicionalmente.
+
+\subsection{Entrenamiento de Agentes}
+
+El objetivo de esta sección es demostrar que el entorno OpenTruco permite entrenar agentes que exhiben aprendizaje progresivo, validando así la correcta implementación del entorno y su compatibilidad con los algoritmos de OpenSpiel.
+
+\subsubsection{Configuración Experimental}
+
+Entrenamos agentes utilizando \textit{Neural Fictitious Self-Play} (NFSP), seleccionado por su balance entre fundamentos teóricos sólidos y eficiencia computacional. El entrenamiento se realizó durante $10000$ pasos del algoritmo.
+
+Se evaluaron seis configuraciones de hiperparámetros, variando:
+\begin{itemize}
+    \item El tamaño de las capas ocultas de las redes neuronales.
+    \item El parámetro de anticipación $\eta$, que controla la mezcla entre la política de mejor respuesta y la política promedio.
+\end{itemize}
+
+Durante el entrenamiento, se registraron las pérdidas (\textit{loss}) de ambas redes neuronales y se evaluó periódicamente el rendimiento del agente contra dos \textit{baselines}: un agente que selecciona acciones uniformemente al azar (\textit{Random}) y un agente basado en IS-MCTS con 100 simulaciones por decisión.
+
+\subsubsection{Resultados}
+
+La Figura \ref{fig:nfsp_loss} presenta la evolución de la pérdida de la red de política promedio durante el entrenamiento. Se observa una reducción consistente de la pérdida en todas las configuraciones, indicando que la red aprende a imitar la distribución de acciones del agente a lo largo del tiempo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\columnwidth]{figures/grouped_loss_curves.pdf}
+    \caption{Evolución de la pérdida de la red de política promedio durante el entrenamiento de NFSP. Todas las configuraciones exhiben una tendencia decreciente, indicando aprendizaje efectivo.}
+    \label{fig:nfsp_loss}
+\end{figure}
+
+Las Figuras \ref{fig:winrate_random} y \ref{fig:winrate_ismcts} muestran la tasa de victoria del agente NFSP contra los \textit{baselines}. Contra el agente aleatorio, la mejor configuración alcanza un 70\% de tasa de victoria tras $10{,}000$ episodios. Contra IS-MCTS, las configuraciones más efectivas logran tasas de victoria del 65\%, demostrando que los agentes logran superar a un oponente basado en búsqueda.
+
+\section{Conclusiones}
+
+En este trabajo presentamos OpenTruco, un entorno de aprendizaje por refuerzo para el Truco Argentino desarrollado como extensión del \textit{framework} OpenSpiel. La implementación modela fielmente las reglas oficiales de la modalidad 1 vs. 1 sin Flor a 30 puntos, incluyendo las mecánicas de apuestas (Truco y Envido) que caracterizan la riqueza estratégica del juego.
+
+La principal contribución de este trabajo es el desarrollo de un entorno funcional y validado para un juego de información imperfecta con dinámicas de \textit{bluffing} y \textit{betting}. Los experimentos realizados con NFSP demuestran que los agentes exhiben aprendizaje progresivo: las curvas de pérdida decrecen consistentemente, y las tasas de victoria contra \textit{baselines} (aleatorio e IS-MCTS) mejoran a lo largo del entrenamiento. Esto confirma que OpenTruco está correctamente implementado y es compatible con la infraestructura de algoritmos de OpenSpiel.
+
+\subsection{Trabajo Futuro}
+
+En cuanto a las posibles extensiones y mejoras del proyecto llevado a cabo,
+identificamos las siguientes líneas de desarrollo futuro.
+
+\textbf{Entrenamiento exhaustivo de agentes.} Los experimentos presentados constituyen una validación del entorno más que una búsqueda de políticas óptimas. Un estudio más profundo debería explorar sistemáticamente los algoritmos disponibles en OpenSpiel: MCCFR y Deep CFR para aproximar equilibrios de Nash con garantías teóricas, y métodos de RL con \textit{self-play} (DQN, PPO) para explorar políticas alternativas. Esta comparación permitiría identificar qué paradigma resulta más efectivo para el dominio del Truco.
+
+\textbf{Interfaz gráfica para evaluación humana.} Las métricas automáticas contra \textit{baselines} algorítmicos no capturan completamente la calidad de un agente de Truco. Las dinámicas de apuestas y \textit{bluffing} son inherentemente humanas: un buen jugador de Truco no solo maximiza su tasa de victoria, sino que también ``lee'' al oponente y adapta su estrategia de engaño. Desarrollar una interfaz que permita enfrentar agentes entrenados contra jugadores humanos proporcionaría una evaluación más fidedigna de su rendimiento y revelaría si los agentes aprenden comportamientos de \textit{bluffing} emergentes.
+
+\newpage
 
 \printbibliography
 
