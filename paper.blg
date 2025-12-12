@@ -1,5 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'paper.blg'
-[74] biber:340> INFO - === Mon Dec  1, 2025, 00:37:31
-[269] Utils.pm:399> ERROR - Cannot find 'paper.bcf'!
-[269] Biber.pm:136> INFO - ERRORS: 1
