@@ -1,10 +1,10 @@
 # open-truco
 
 <p align="center">
-  <img src="assets/basto.svg" height="50" alt="Basto" />
-  <img src="assets/copa.svg" height="50" alt="Copa" />
-  <img src="assets/espada.svg" height="50" alt="Espada" />
-  <img src="assets/oro.svg" height="50" alt="Oro" />
+  <img src="assets/basto.svg" height="100" alt="Basto" />
+  <img src="assets/copa.svg" height="100" alt="Copa" />
+  <img src="assets/espada.svg" height="100" alt="Espada" />
+  <img src="assets/oro.svg" height="100" alt="Oro" />
 </p>
 
 This repository contains tools for training and evaluating reinforcement learning agents for the South American card game [Truco](https://es.wikipedia.org/wiki/Truco_argentino), built on top of Google DeepMind's [OpenSpiel](https://github.com/deepmind/open_spiel) framework.
